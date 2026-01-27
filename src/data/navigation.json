@@ -1,0 +1,14 @@
+[
+  { "label": "Home", "href": "/" },
+  { "label": "About Us", "href": "/about" },
+  {
+    "label": "Services",
+    "href": "/services",
+    "children": [
+      { "label": "Web Development", "href": "/services/web-development" },
+      { "label": "SEO Services", "href": "/services/seo" },
+      { "label": "Digital Marketing", "href": "/services/digital-marketing" }
+    ]
+  },
+  { "label": "Contact Us", "href": "/contact" }
+]
