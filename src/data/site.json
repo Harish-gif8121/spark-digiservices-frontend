@@ -1,5 +1,82 @@
 {
-  "name": "Digital Marketing Agency in Hyderabad | Sparkdigi Services",
-  "description": "Digital Solutions for Your Business",
-  "url": "https://mywebsite.com"
+  "name": "Digital Marketing Agency",
+  "description": "We help businesses grow with SEO, Ads, and Social Media Marketing.",
+  "tagline": "No 1 Digital Marketing Agency in Hyderabad",
+  "highlight": "Digital Marketing Services",
+  "phone": "012-345-6789",
+
+  "testimonials": {
+    "rating": 4.9,
+    "reviewsCount": 40,
+    "reviews": [
+      {
+        "company": "Logoipsum",
+        "rating": 5,
+        "review": "The team transformed our brand's online presence with creativity and precision. The results exceeded our expectations! Their digital marketing strategies helped us reach a broader audience and significantly boosted our sales.",
+        "author": "Sarah Mitchell",
+        "designation": "Marketing Director",
+        "image": "/avatars/user1.jpg"
+      },
+      {
+        "company": "TechNova",
+        "rating": 5,
+        "review": "Working with them was a fantastic experience. Our website traffic doubled and conversions improved dramatically.",
+        "author": "James Carter",
+        "designation": "CEO",
+        "image": "/avatars/user2.jpg"
+      },
+      {
+        "company": "BrightEdge",
+        "rating": 5,
+        "review": "Highly professional team. Their SEO strategies pushed us to the top rankings within months.",
+        "author": "Olivia Brown",
+        "designation": "Growth Manager",
+        "image": "/avatars/user3.jpg"
+      }
+    ]
+  },
+
+
+  
+  "benefits": {
+    "tag": "KEY BENEFITS",
+    "title": "Discover the advantages of choosing",
+    "highlight": "Sparkdigi Services",
+    "subtitle": "Experience exceptional creativity, data-driven strategies, and dedicated support to achieve outstanding results for your brand.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Customized Solutions",
+        "description": "We tailor our strategies to meet your unique business needs and ensure complete alignment with your goals.",
+        "icon": "clipboard"
+      },
+      {
+        "number": "02",
+        "title": "Expert Team",
+        "description": "Our skilled professionals bring industry knowledge and creative innovation to deliver exceptional outcomes.",
+        "icon": "settings"
+      },
+      {
+        "number": "03",
+        "title": "Data-Driven Insights",
+        "description": "We leverage analytics to refine strategies, optimize performance, and deliver measurable results.",
+        "icon": "chart"
+      },
+      {
+        "number": "04",
+        "title": "Dedicated Support",
+        "description": "We offer ongoing assistance and maintenance to ensure your digital solutions perform at their best.",
+        "icon": "support"
+      }
+    ]
+  },
+   "contact": {
+    "tagline": "LET'S COLLABORATE",
+    "title": "LET'S WORK TOGETHER",
+    "phone": "+91 85 99 00 2222",
+    "email": "info@Sparkdigi Services.com",
+    "description": "Sparkdigi Services is a full-service digital agency specializing in innovative solutions for web and app development, digital marketing, branding, and more.",
+    "mapEmbed": "https://www.google.com/maps?q=Hyderabad&output=embed"
+  }
+
 }

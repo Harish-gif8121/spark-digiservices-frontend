@@ -5,9 +5,8 @@
     "label": "Services",
     "href": "/services",
     "children": [
-      { "label": "Web Development", "href": "/services/web-development" },
-      { "label": "SEO Services", "href": "/services/seo" },
-      { "label": "Digital Marketing", "href": "/services/digital-marketing" }
+       { "label": "CRM Software", "href": "/services/crm-software" },
+      { "label": "Lead Management", "href": "/services/lead-management" }
     ]
   },
   { "label": "Contact Us", "href": "/contact" }

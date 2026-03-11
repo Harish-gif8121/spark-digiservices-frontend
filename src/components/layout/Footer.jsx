@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="border-t p-4 text-center text-sm">
-      © {new Date().getFullYear()} My Business
+    <footer className="p-4 text-center text-white text-sm bg-gray-900">
+      © {new Date().getFullYear()} Spark Digi Services. All rights reserved.
     </footer>
   );
 }

@@ -2,11 +2,19 @@
   {
     "slug": "crm-software",
     "title": "CRM Software",
-    "description": "Powerful CRM solution"
+    "description": "Powerful CRM solution",
+    "features": [
+      "Customer management",
+      "Sales automation"
+    ]
   },
   {
     "slug": "lead-management",
     "title": "Lead Management",
-    "description": "Manage leads effectively"
+    "description": "Manage leads effectively",
+    "features": [
+      "Lead capture",
+      "Lead tracking"
+    ]
   }
 ]

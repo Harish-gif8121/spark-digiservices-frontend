@@ -8,8 +8,10 @@ export default function FormTrigger() {
 
   return (
     <>
-      <button onClick={() => setOpen(true)} className="mt-6 bg-blue-600 text-white px-6 py-3">
-        Get Demo
+      <button onClick={() => setOpen(true)}  className="inline-block bg-red-500 hover:bg-red-600 text-white px-10 py-4 rounded-full text-sm tracking-wider font-semibold transition duration-300"
+            >
+             
+        Get Quote
       </button>
       <PopupForm open={open} onClose={() => setOpen(false)} />
     </>

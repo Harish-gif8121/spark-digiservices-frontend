@@ -1,13 +1,24 @@
+import React from 'react'
+import Banner from '@/components/sections/banner'
 import site from "@/data/site.json";
-import FormTrigger from "@/components/FormTrigger";
+import "../styles/global.css";
+import ServicesMarquee from '@/components/sections/ServicesMarquee'
+import SparkDigiServices from '@/components/sections/SparkDigiServices';
+import TestimonialsClient from '@/components/sections/testimonials/TestimonailsClient';
+import KeyBenefits from '@/components/sections/keybenefits';
+import ContactSection from '@/components/sections/contactSection';
 
-export default function HomePage() {
+const page = () => {
   return (
-    <main className="container mx-auto py-10">
-      <h1 className="text-3xl font-bold">{site.name}</h1>
-      <p className="mt-4">{site.description}</p>
-
-      <FormTrigger />
-    </main>
-  );
+    <div>
+      <Banner />
+      <ServicesMarquee/>
+      <SparkDigiServices/>
+       <TestimonialsClient testimonials={site.testimonials} />
+       <KeyBenefits/>
+       <ContactSection/>
+    </div>
+  )
 }
+
+export default page
