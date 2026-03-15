@@ -1,20 +1,22 @@
 import services from "@/data/services.json";
 import Breadcrumbs from "@/components/layout/BreadCrumbs";
-// 
 import ServiceHero from "@/components/ServicesUI/ServiceHero";
 import ServiceFeatures from "@/components/ServicesUI/ServiceFeatures";
 import { notFound } from "next/navigation";
+import SparkDigiServices from "@/components/sections/SparkDigiServices";
 
-/* Generate Static Pages for All Services */
+/* Static pages */
 export async function generateStaticParams() {
   return services.map((service) => ({
     slug: service.slug,
   }));
 }
 
-/* SEO Metadata */
+/* SEO metadata */
 export async function generateMetadata({ params }) {
-  const service = services.find((s) => s.slug === params.slug);
+  const { slug } = await params;
+
+  const service = services.find((s) => s.slug === slug);
 
   if (!service) return {};
 
@@ -24,30 +26,30 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function ServicePage({ params }) {
-  const service = services.find((s) => s.slug === params.slug);
+/* Page */
+export default async function ServicePage({ params }) {
+  const { slug } = await params;
 
-  if (!service) {
-    notFound();
-  }
+  const service = services.find((s) => s.slug === slug);
+
+  if (!service) notFound();
 
   return (
-    <main className="container mt-24 h-screen mx-auto py-10 bg-amber-400">
+    <main className="container mx-auto mt-24 py-10 bg-white text-black rounded-lg shadow-md px-6">
 
-      {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },
-          { label: service.title, href: `/services/${service.slug}` },
+          { label: service.title, href: `/services/${service.slug}` }
         ]}
       />
 
-      {/* Hero Section */}
       <ServiceHero service={service} />
 
-      {/* Features Section */}
       <ServiceFeatures features={service.features} />
+
+      <SparkDigiServices />
 
     </main>
   );

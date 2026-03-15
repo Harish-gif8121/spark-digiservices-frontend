@@ -2,19 +2,27 @@
   {
     "slug": "crm-software",
     "title": "CRM Software",
-    "description": "Powerful CRM solution",
+    "description": "CRM software for managing customers",
+    "heroTitle": "CRM Software",
+    "heroDescription": "Manage leads, customers and sales in one powerful CRM platform.",
     "features": [
-      "Customer management",
-      "Sales automation"
+      "Lead Tracking",
+      "Customer Management",
+      "Sales Automation",
+      "Analytics Dashboard"
     ]
   },
   {
     "slug": "lead-management",
     "title": "Lead Management",
-    "description": "Manage leads effectively",
+    "description": "Lead management system",
+    "heroTitle": "Lead Management System",
+    "heroDescription": "Capture, nurture and convert leads faster with our smart lead system.",
     "features": [
-      "Lead capture",
-      "Lead tracking"
+      "Lead Capture",
+      "Lead Scoring",
+      "Pipeline Tracking",
+      "Automated Followups"
     ]
   }
 ]

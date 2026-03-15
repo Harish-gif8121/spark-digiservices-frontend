@@ -1,13 +1,28 @@
 [
-  { "label": "Home", "href": "/" },
-  { "label": "About Us", "href": "/about" },
+  {
+    "label": "Home",
+    "href": "/"
+  },
+
+   {
+    "label": "About Us",
+    "href": "/about"
+  },
   {
     "label": "Services",
-    "href": "/services",
     "children": [
-       { "label": "CRM Software", "href": "/services/crm-software" },
-      { "label": "Lead Management", "href": "/services/lead-management" }
+      {
+        "label": "CRM Software",
+        "href": "/services/crm-software"
+      },
+      {
+        "label": "Lead Management",
+        "href": "/services/lead-management"
+      }
     ]
   },
-  { "label": "Contact Us", "href": "/contact" }
+  {
+    "label": "Contact",
+    "href": "/contact"
+  }
 ]
