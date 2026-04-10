@@ -77,6 +77,82 @@
     "email": "info@Sparkdigi Services.com",
     "description": "Sparkdigi Services is a full-service digital agency specializing in innovative solutions for web and app development, digital marketing, branding, and more.",
     "mapEmbed": "https://www.google.com/maps?q=Hyderabad&output=embed"
-  }
+  },
+
+
+  "whyChoose": {
+  "tag": "WHY CHOOSE US",
+  "title": "Why brands trust",
+  "highlight": "Sparkdigi Services",
+  "subtitle": "ROI-focused, data-driven, transparent, and fully supported marketing strategies.",
+  "image": "/choose.webp",
+  "items": [
+    {
+      "number": "01",
+      "title": "ROI Focused",
+      "description": "Every campaign is optimized to maximize return on investment and business growth."
+    },
+    {
+      "number": "02",
+      "title": "Data-Driven Strategy",
+      "description": "We use real analytics and insights to make smarter marketing decisions."
+    },
+    {
+      "number": "03",
+      "title": "Full Transparency",
+      "description": "Clear reporting, honest communication, and no hidden tactics."
+    },
+    {
+      "number": "04",
+      "title": "Dedicated Support",
+      "description": "Our team is always available to support, optimize, and scale your campaigns."
+    }
+  ]
+},
+"industries": {
+  "tag": "INDUSTRIES",
+  "title": "Industries Served",
+  "subtitle": "We provide tailored digital solutions across multiple industries to drive measurable results.",
+  "items": [
+    {
+      "name": "Real Estate",
+      "description": "Property marketing, lead generation, and branding solutions.",
+      "icon": "building"
+    },
+    {
+      "name": "Healthcare",
+      "description": "Digital growth solutions for hospitals, clinics, and healthcare providers.",
+      "icon": "health"
+    },
+    {
+      "name": "E-commerce",
+      "description": "Boost online sales with conversion-focused strategies.",
+      "icon": "cart"
+    },
+    {
+      "name": "Local Businesses",
+      "description": "Increase visibility and attract local customers effectively.",
+      "icon": "store"
+    },
+    {
+      "name": "Design",
+      "description": "Creative branding and visual identity solutions.",
+      "icon": "design"
+    },
+    {
+      "name": "Transport",
+      "description": "Logistics and transport business growth strategies.",
+      "icon": "truck"
+    },
+    {
+      "name": "Education",
+      "description": "Digital marketing solutions for schools and institutions.",
+      "icon": "education"
+    }
+  ]
+}
+
 
 }
+
+ 

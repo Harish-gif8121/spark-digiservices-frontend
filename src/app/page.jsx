@@ -7,14 +7,25 @@ import SparkDigiServices from '@/components/sections/SparkDigiServices';
 import TestimonialsClient from '@/components/sections/testimonials/TestimonailsClient';
 import KeyBenefits from '@/components/sections/keybenefits';
 import ContactSection from '@/components/sections/contactSection';
+import TrustStats from '@/components/sections/TrustStats';
+import WhyChoose from '@/components/sections/WhyChoose';
+import ClientsSection from '@/components/sections/ClientsSection';
+import IndustriesSection from '@/components/sections/Industries';
+import FreeAuditSection from '@/components/sections/FreeAuditSection';
 
 const page = () => {
   return (
-    <div>
+    <div className='mt-10'>
       <Banner />
       <ServicesMarquee/>
-      <SparkDigiServices/>
+       <TrustStats data={site} />
+       <WhyChoose data={site} />
+       <ClientsSection data={site.clientsSection} />
+       <IndustriesSection data={site.industries} />
        <TestimonialsClient testimonials={site.testimonials} />
+
+      <SparkDigiServices/>
+      <FreeAuditSection />
        <KeyBenefits/>
        <ContactSection/>
     </div>

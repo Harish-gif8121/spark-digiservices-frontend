@@ -24,13 +24,13 @@ export default function KeyBenefits() {
         <div className="grid md:grid-cols-2 gap-10 mb-16">
 
           <div>
-            <p className="text-red-500 uppercase tracking-widest text-sm mb-3">
+            <p className="text-[#4a8f8a]uppercase tracking-widest text-sm mb-3">
               * {benefits.tag}
             </p>
 
             <h2 className="text-4xl md:text-5xl font-semibold leading-tight">
               {benefits.title}{" "}
-              <span className="text-red-500">{benefits.highlight}</span> today
+              <span className="text-[#c81d3a]">{benefits.highlight}</span> today
             </h2>
           </div>
 
@@ -57,7 +57,7 @@ export default function KeyBenefits() {
                   {item.number}
                 </span>
 
-                <div className="text-red-500 mt-6 mb-6">
+                <div className="text-[#4a8f8a]mt-6 mb-6">
                   <Icon size={36} strokeWidth={1.5} />
                 </div>
 

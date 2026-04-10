@@ -20,10 +20,7 @@ export default function Testimonials() {
   };
 
   useEffect(() => {
-    const autoSlide = setInterval(() => {
-      next();
-    }, 5000);
-
+    const autoSlide = setInterval(next, 5000);
     return () => clearInterval(autoSlide);
   }, []);
 
@@ -32,15 +29,16 @@ export default function Testimonials() {
   return (
     <section className="bg-black text-white py-24 relative overflow-hidden">
 
-      <div className="container mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center px-4">
 
-        {/* LEFT RATING CARD */}
+        {/* LEFT CARD */}
+        <div className="bg-[#111] border border-[#2a2a2a] rounded-3xl p-12 text-center w-full max-w-sm mx-auto shadow-lg">
 
-        <div className="bg-[#0b0b0b] border border-neutral-800 rounded-3xl p-12 text-center w-[360px]">
+          <h2 className="text-6xl font-bold text-[#e94c89]">
+            {rating}
+          </h2>
 
-          <h2 className="text-6xl font-bold">{rating}</h2>
-
-          <div className="text-red-500 text-xl my-3">
+          <div className="text-[#e94c89] text-xl my-3">
             ⭐⭐⭐⭐⭐
           </div>
 
@@ -52,6 +50,7 @@ export default function Testimonials() {
             Customer experiences that speak for themselves
           </p>
 
+          {/* Avatars */}
           <div className="flex justify-center mt-6 -space-x-3">
             <Image src="/avatars/user1.jpg" width={36} height={36} className="rounded-full border-2 border-black" alt="" />
             <Image src="/avatars/user2.jpg" width={36} height={36} className="rounded-full border-2 border-black" alt="" />
@@ -61,12 +60,10 @@ export default function Testimonials() {
 
         </div>
 
-        {/* RIGHT REVIEW SLIDER */}
-
-        <div className="relative">
+        {/* RIGHT SLIDER */}
+        <div className="relative min-h-[250px]">
 
           <AnimatePresence mode="wait">
-
             <motion.div
               key={index}
               initial={{ opacity: 0, x: 80 }}
@@ -76,11 +73,11 @@ export default function Testimonials() {
               className="absolute w-full"
             >
 
-              <h4 className="text-green-400 mb-2">
+              <h4 className="text-[#e94c89] mb-2 font-semibold">
                 {review.company}
               </h4>
 
-              <div className="text-red-500 mb-4">
+              <div className="text-[#e94c89] mb-4">
                 ⭐⭐⭐⭐⭐
               </div>
 
@@ -95,11 +92,13 @@ export default function Testimonials() {
                   width={50}
                   height={50}
                   alt={review.author}
-                  className="rounded-full"
+                  className="rounded-full border border-[#e94c89]"
                 />
 
                 <div>
-                  <h4 className="font-semibold">{review.author}</h4>
+                  <h4 className="font-semibold text-white">
+                    {review.author}
+                  </h4>
                   <p className="text-gray-400 text-sm">
                     {review.designation}
                   </p>
@@ -108,23 +107,23 @@ export default function Testimonials() {
               </div>
 
             </motion.div>
-
           </AnimatePresence>
 
           {/* ARROWS */}
-
-          <div className="flex gap-4 mt-28 relative z-10 top-20 justify-end">
+          <div className="flex gap-4 mt-28 justify-end">
 
             <button
               onClick={prev}
-              className="bg-neutral-800 p-4 rounded-xl hover:bg-neutral-700 transition"
+              className="bg-[#1a1a1a] p-4 rounded-xl border border-[#2a2a2a] 
+              hover:bg-[#e94c89] hover:text-white transition"
             >
               <ArrowLeft size={20} />
             </button>
 
             <button
               onClick={next}
-              className="bg-neutral-800 p-4 rounded-xl hover:bg-neutral-700 transition"
+              className="bg-[#1a1a1a] p-4 rounded-xl border border-[#2a2a2a] 
+              hover:bg-[#e94c89] hover:text-white transition"
             >
               <ArrowRight size={20} />
             </button>
@@ -135,9 +134,9 @@ export default function Testimonials() {
 
       </div>
 
-      {/* RIGHT GRADIENT */}
-
-      <div className="absolute right-0 top-0 w-[40%] h-full bg-gradient-to-l from-red-900/40 to-transparent pointer-events-none"></div>
+      {/* GRADIENT EFFECT */}
+      <div className="absolute right-0 top-0 w-[40%] h-full 
+      bg-gradient-to-l from-[#e94c89]/30 to-transparent pointer-events-none"></div>
 
     </section>
   );

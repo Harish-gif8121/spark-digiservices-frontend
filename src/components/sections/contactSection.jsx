@@ -34,7 +34,7 @@ export default function ContactSection() {
 
           {/* Left Content */}
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-red-500">
+            <h3 className="text-xl font-semibold text-[#c81d3a]">
               Sparkdigi Services
             </h3>
 

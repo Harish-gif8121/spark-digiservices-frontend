@@ -3,8 +3,7 @@
     "label": "Home",
     "href": "/"
   },
-
-   {
+  {
     "label": "About Us",
     "href": "/about"
   },
@@ -12,13 +11,46 @@
     "label": "Services",
     "children": [
       {
-        "label": "CRM Software",
-        "href": "/services/crm-software"
+        "label": "Logo Design",
+        "href": "/services/logo-design"
       },
       {
-        "label": "Lead Management",
-        "href": "/services/lead-management"
+        "label": "Search Engine Optimization (SEO)",
+        "href": "/services/seo"
+      },
+      {
+        "label": "Social Media Marketing",
+        "href": "/services/social-media-marketing"
+      },
+      {
+        "label": "Google Ads",
+        "href": "/services/google-ads"
+      },
+      {
+        "label": "Google My Business (Local SEO)",
+        "href": "/services/local-seo"
+      },
+      {
+        "label": "Website Development & Design",
+        "href": "/services/website-development"
+      },
+      {
+        "label": "Mobile App Development",
+        "href": "/services/app-development"
+      },
+      {
+        "label": "Trademark Registration",
+        "href": "/services/trademark-registration"
+      },
+      {
+        "label": "Email Marketing",
+        "href": "/services/email-marketing"
+      },
+      {
+        "label": "WhatsApp Marketing",
+        "href": "/services/whatsapp-marketing"
       }
+ 
     ]
   },
   {

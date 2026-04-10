@@ -86,7 +86,7 @@ export default function Header() {
             href="/contact"
             className="border border-black rounded-full px-6 py-2 text-sm font-semibold hover:bg-black hover:text-white transition"
           >
-            GET A QUOTE
+            +91 6300296581
           </Link>
 
         </div>
