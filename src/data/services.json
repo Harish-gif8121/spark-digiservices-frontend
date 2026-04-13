@@ -1,12 +1,133 @@
 [
+ 
   {
-    "slug": "crm-software",
-    "title": "CRM Software",
-    "description": "Powerful CRM solution"
+    "slug": "logo-design",
+    "title": "Logo Design",
+    "description": "Professional logo design services",
+    "heroTitle": "Creative Logo Design",
+    "heroDescription": "Design unique and memorable logos that represent your brand identity.",
+    "features": [
+      "Custom Logo Concepts",
+      "Brand Identity Design",
+      "Multiple Design Variations",
+      "High-Resolution Files"
+    ]
   },
   {
-    "slug": "lead-management",
-    "title": "Lead Management",
-    "description": "Manage leads effectively"
+    "slug": "seo",
+    "title": "Search Engine Optimization (SEO)",
+    "description": "SEO services to improve search rankings",
+    "heroTitle": "Search Engine Optimization (SEO)",
+    "heroDescription": "Improve your website ranking and drive organic traffic from search engines.",
+    "features": [
+      "Keyword Research",
+      "On-Page SEO",
+      "Technical SEO Optimization",
+      "Link Building Strategy"
+    ]
+  },
+  {
+    "slug": "social-media-marketing",
+    "title": "Social Media Marketing",
+    "description": "Social media growth and marketing services",
+    "heroTitle": "Social Media Marketing",
+    "heroDescription": "Grow your brand presence across all major social platforms.",
+    "features": [
+      "Content Strategy",
+      "Post Scheduling",
+      "Audience Engagement",
+      "Performance Analytics"
+    ]
+  },
+  {
+    "slug": "google-ads",
+    "title": "Google Ads",
+    "description": "Paid advertising on Google",
+    "heroTitle": "Google Ads Campaigns",
+    "heroDescription": "Run targeted Google Ads to generate high-quality leads quickly.",
+    "features": [
+      "Search Campaign Setup",
+      "Display Ads Management",
+      "Keyword Targeting",
+      "Conversion Tracking"
+    ]
+  },
+  {
+    "slug": "local-seo",
+    "title": "Google My Business (Local SEO)",
+    "description": "Local SEO and Google Business optimization",
+    "heroTitle": "Local SEO Optimization",
+    "heroDescription": "Improve your local visibility and attract nearby customers effectively.",
+    "features": [
+      "Google Business Setup",
+      "Local Keyword Targeting",
+      "Map Ranking Optimization",
+      "Review Management"
+    ]
+  },
+  {
+    "slug": "website-development",
+    "title": "Website Development & Design",
+    "description": "Custom website development services",
+    "heroTitle": "Website Development & Design",
+    "heroDescription": "Build fast, modern, and responsive websites tailored to your business.",
+    "features": [
+      "Responsive Web Design",
+      "Custom Development",
+      "SEO-Friendly Structure",
+      "Performance Optimization"
+    ]
+  },
+  {
+    "slug": "app-development",
+    "title": "Mobile App Development",
+    "description": "Android and iOS app development",
+    "heroTitle": "Mobile App Development",
+    "heroDescription": "Develop powerful mobile applications for Android and iOS platforms.",
+    "features": [
+      "Android & iOS Apps",
+      "UI/UX Design",
+      "API Integration",
+      "App Store Deployment"
+    ]
+  },
+  {
+    "slug": "trademark-registration",
+    "title": "Trademark Registration",
+    "description": "Brand trademark registration services",
+    "heroTitle": "Trademark Registration",
+    "heroDescription": "Protect your brand legally with complete trademark registration support.",
+    "features": [
+      "Trademark Search",
+      "Application Filing",
+      "Legal Documentation",
+      "Status Tracking"
+    ]
+  },
+  {
+    "slug": "email-marketing",
+    "title": "Email Marketing",
+    "description": "Email campaign management services",
+    "heroTitle": "Email Marketing",
+    "heroDescription": "Engage customers and boost sales with targeted email campaigns.",
+    "features": [
+      "Email Campaign Setup",
+      "Automated Email Sequences",
+      "List Segmentation",
+      "Performance Tracking"
+    ]
+  },
+  {
+    "slug": "whatsapp-marketing",
+    "title": "WhatsApp Marketing",
+    "description": "WhatsApp promotional marketing services",
+    "heroTitle": "WhatsApp Marketing",
+    "heroDescription": "Reach customers instantly using automated WhatsApp campaigns.",
+    "features": [
+      "Bulk Messaging",
+      "Automated Responses",
+      "Broadcast Campaigns",
+      "Lead Engagement Tracking"
+    ]
   }
 ]

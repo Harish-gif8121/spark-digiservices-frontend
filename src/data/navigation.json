@@ -1,14 +1,60 @@
 [
-  { "label": "Home", "href": "/" },
-  { "label": "About Us", "href": "/about" },
+  {
+    "label": "Home",
+    "href": "/"
+  },
+  {
+    "label": "About Us",
+    "href": "/about"
+  },
   {
     "label": "Services",
-    "href": "/services",
     "children": [
-      { "label": "Web Development", "href": "/services/web-development" },
-      { "label": "SEO Services", "href": "/services/seo" },
-      { "label": "Digital Marketing", "href": "/services/digital-marketing" }
+      {
+        "label": "Logo Design",
+        "href": "/services/logo-design"
+      },
+      {
+        "label": "Search Engine Optimization (SEO)",
+        "href": "/services/seo"
+      },
+      {
+        "label": "Social Media Marketing",
+        "href": "/services/social-media-marketing"
+      },
+      {
+        "label": "Google Ads",
+        "href": "/services/google-ads"
+      },
+      {
+        "label": "Google My Business (Local SEO)",
+        "href": "/services/local-seo"
+      },
+      {
+        "label": "Website Development & Design",
+        "href": "/services/website-development"
+      },
+      {
+        "label": "Mobile App Development",
+        "href": "/services/app-development"
+      },
+      {
+        "label": "Trademark Registration",
+        "href": "/services/trademark-registration"
+      },
+      {
+        "label": "Email Marketing",
+        "href": "/services/email-marketing"
+      },
+      {
+        "label": "WhatsApp Marketing",
+        "href": "/services/whatsapp-marketing"
+      }
+ 
     ]
   },
-  { "label": "Contact Us", "href": "/contact" }
+  {
+    "label": "Contact",
+    "href": "/contact"
+  }
 ]
