@@ -57,11 +57,11 @@ export default function HeroSection() {
           <Animation direction="up" delay={600}>
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <FormTrigger className="w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-sm tracking-wider font-semibold transition duration-300">
-                GET A QUOTE
+                 GET FREE AUDIT
               </FormTrigger>
 
               <button className="w-full sm:w-auto border border-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-sm tracking-wider font-semibold hover:bg-white hover:text-black transition duration-300">
-                GET FREE AUDIT
+               +91 6300296581
               </button>
             </div>
           </Animation>

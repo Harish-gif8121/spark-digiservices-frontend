@@ -12,6 +12,7 @@ import WhyChoose from '@/components/sections/WhyChoose';
 import ClientsSection from '@/components/sections/ClientsSection';
 import IndustriesSection from '@/components/sections/Industries';
 import FreeAuditSection from '@/components/sections/FreeAuditSection';
+import BlogSection from '@/components/sections/BlogSection';
 
 const page = () => {
   return (
@@ -26,8 +27,9 @@ const page = () => {
 
       <SparkDigiServices/>
       <FreeAuditSection />
-       <KeyBenefits/>
+       {/* <KeyBenefits/> */}
        <ContactSection/>
+       <BlogSection/>
     </div>
   )
 }

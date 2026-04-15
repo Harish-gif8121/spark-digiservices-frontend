@@ -2,6 +2,9 @@ import Link from "next/link";
 import nav from "@/data/navigation.json";
 import Image from "next/image";
 import { ChevronDown, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { FaFacebook } from "react-icons/fa";
+import { BsInstagram, BsTwitter } from "react-icons/bs";
+import { LiaLinkedin } from "react-icons/lia";
 
 export default function Header() {
   return (
@@ -68,16 +71,16 @@ export default function Header() {
           {/* SOCIAL MEDIA */}
           <div className="flex items-center gap-3 text-gray-600">
             <Link href="#" className="hover:text-blue-600 transition">
-              <Facebook size={18} />
+              <FaFacebook size={18} />
             </Link>
             <Link href="#" className="hover:text-pink-500 transition">
-              <Instagram size={18} />
+              <BsInstagram size={18} />
             </Link>
             <Link href="#" className="hover:text-blue-700 transition">
-              <Linkedin size={18} />
+              <LiaLinkedin size={18} />
             </Link>
             <Link href="#" className="hover:text-sky-500 transition">
-              <Twitter size={18} />
+              <BsTwitter size={18} />
             </Link>
           </div>
 
