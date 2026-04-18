@@ -1,26 +1,49 @@
 import Link from "next/link";
+import { Home, ChevronRight } from "lucide-react";
 
 export default function Breadcrumbs({ items }) {
   return (
-    <div className="mb-8 text-sm text-gray-500">
+    <nav className="mb-10">
+      <ol className="flex flex-wrap items-center text-sm">
 
-      {items.map((item, index) => (
-        <span key={index}>
+        {items.map((item, index) => {
+          const isLast = index === items.length - 1;
 
-          <Link
-            href={item.href}
-            className="hover:text-blue-600"
-          >
-            {item.label}
-          </Link>
+          return (
+            <li key={index} className="flex items-center">
 
-          {index < items.length - 1 && (
-            <span className="mx-2">/</span>
-          )}
+              {/* Home Icon (only first item) */}
+              {index === 0 && (
+                <Home size={16} className="mr-1 text-gray-500" />
+              )}
 
-        </span>
-      ))}
+              {/* Link or Active */}
+              {!isLast ? (
+                <Link
+                  href={item.href}
+                  className="text-gray-500 hover:text-[#e94c89] transition-colors duration-200"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span className="text-gray-900 font-semibold">
+                  {item.label}
+                </span>
+              )}
 
-    </div>
+              {/* Separator Icon */}
+              {!isLast && (
+                <ChevronRight
+                  size={16}
+                  className="mx-2 text-gray-400"
+                />
+              )}
+
+            </li>
+          );
+        })}
+
+      </ol>
+    </nav>
   );
 }

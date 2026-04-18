@@ -1,5 +1,5 @@
 export const toolStack = {
-  "logo-design": {
+  "seo": {
     strategy: [
       { name: "Hootsuite", icon: "https://static-www.adweek.com/wp-content/uploads/2022/07/Hootsuite-REBRAND-HERO-2022.jpg?w=1200" },
         

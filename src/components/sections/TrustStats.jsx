@@ -58,7 +58,7 @@ export default function TrustStats({ data }) {
           observer.disconnect(); // run only once
         }
       },
-      { threshold: 0.3 } // trigger when 30% visible
+      { threshold: 0.3 }, // trigger when 30% visible
     );
 
     if (sectionRef.current) {
@@ -72,29 +72,28 @@ export default function TrustStats({ data }) {
     {
       label: "Happy Clients",
       value: 120,
-      suffix: "+"
+      suffix: "+",
     },
     {
       label: "Projects Done",
       value: 500,
-      suffix: "+"
+      suffix: "+",
     },
     {
       label: "Growth Rate",
       value: 95,
-      suffix: "%"
+      suffix: "%",
     },
     {
       label: "Client Rating",
       value: Math.floor(data?.testimonials?.rating || 4.9),
-      suffix: "/5"
-    }
+      suffix: "/5",
+    },
   ];
 
   return (
     <section ref={sectionRef} className="py-20 text-black">
       <div className="max-w-6xl mx-auto px-4">
-
         {/* ---------- STATS ---------- */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14">
           {stats.map((stat, index) => (
@@ -108,21 +107,7 @@ export default function TrustStats({ data }) {
           ))}
         </div>
 
-        {/* ---------- TRUST BAR ---------- */}
-        <div className="text-center">
-          <p className="text-gray-600 mb-6 text-sm tracking-wider uppercase">
-            Trusted by 50+ Businesses
-          </p>
-
-          <div className="flex flex-wrap justify-center items-center gap-10 opacity-70">
-            <img src="/logos/logo1.svg" alt="logo" className="h-8" />
-            <img src="/logos/logo2.svg" alt="logo" className="h-8" />
-            <img src="/logos/logo3.svg" alt="logo" className="h-8" />
-            <img src="/logos/logo4.svg" alt="logo" className="h-8" />
-            <img src="/logos/logo5.svg" alt="logo" className="h-8" />
-          </div>
-        </div>
-
+      
       </div>
     </section>
   );
