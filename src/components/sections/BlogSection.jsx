@@ -1,5 +1,5 @@
 import Link from "next/link";
-import blogs from "@/data/blogs";
+import {blogs} from "@/data/blogs";
 
 export default function BlogSection() {
   return (
@@ -13,12 +13,12 @@ export default function BlogSection() {
               BLOG / INSIGHTS
             </p>
             <h2 className="text-4xl md:text-5xl font-bold">
-              Latest <span className="text-[#e94c89]">Articles</span>
+              Latest <span className="text-blue-500">Articles</span>
             </h2>
           </div>
 
           <Link href="/blogs">
-            <button className="px-6 py-3 bg-black text-white rounded-full hover:bg-[#e94c89] transition font-medium">
+            <button className="px-6 py-3 bg-black text-white rounded-full hover:bg-blue-500 transition font-medium">
               View All Blogs →
             </button>
           </Link>
@@ -37,7 +37,7 @@ export default function BlogSection() {
                   alt={blog.title}
                   className="w-full h-56 object-cover group-hover:scale-110 transition duration-500"
                 />
-                <span className="absolute top-4 left-4 bg-[#e94c89] text-white text-xs px-3 py-1 rounded-full">
+                <span className="absolute top-4 left-4 bg-blue-500 text-white text-xs px-3 py-1 rounded-full">
                   {blog.category}
                 </span>
               </div>
@@ -45,7 +45,7 @@ export default function BlogSection() {
               <div className="p-6">
                 <p className="text-xs text-gray-500 mb-2">{blog.date}</p>
 
-                <h3 className="text-lg font-semibold mb-3 group-hover:text-[#e94c89] transition">
+                <h3 className="text-lg font-semibold mb-3 group-hover:text-blue-500 transition">
                   {blog.title}
                 </h3>
 
@@ -54,7 +54,7 @@ export default function BlogSection() {
                 </p>
 
                 <Link href={`/blogs/${blog.id}`}>
-                  <span className="text-sm font-medium text-black group-hover:text-[#e94c89]">
+                  <span className="text-sm font-medium text-black group-hover:text-blue-500">
                     Read More →
                   </span>
                 </Link>

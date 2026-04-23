@@ -6,7 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
-export default function PopupForm({ open, onClose }) {
+export default function PopupForm({ open, onClose, source }) {
+
+  console.log("PopupForm ", source);  // Debug log for source prop
   const [mounted, setMounted] = useState(false);
   const [errors, setErrors] = useState({});
   const router = useRouter();
@@ -98,6 +100,7 @@ export default function PopupForm({ open, onClose }) {
       company: form.company.value,
       services: form.service.value,
       message: form.message.value,
+      source: source || "unknown",
     };
 
     let newErrors = {};

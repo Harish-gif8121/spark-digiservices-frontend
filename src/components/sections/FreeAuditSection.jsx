@@ -6,7 +6,7 @@ export default function FreeAuditSection() {
         {/* Header */}
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-bold text-black">
-            Get a <span className="text-pink-600">Free Growth Audit</span> Today
+            Get a <span className="text-blue-500">Free Growth Audit</span> Today
           </h2>
           <p className="mt-4 text-gray-600 text-base md:text-lg">
             Unlock hidden opportunities in your business with expert analysis and proven strategies.
@@ -25,11 +25,11 @@ export default function FreeAuditSection() {
               We analyze your website performance, SEO issues, and conversion gaps.
             </p>
 
-            <div className="mt-4 text-sm text-pink-600 font-semibold">
+            <div className="mt-4 text-sm text-blue-500 font-semibold">
               ⚡ Limited Slots Available
             </div>
 
-            <button className="mt-6 w-full bg-black text-white py-3 rounded-xl hover:bg-pink-600 transition">
+            <button className="mt-6 w-full bg-black text-white py-3 rounded-xl hover:bg-blue-500   transition">
               Book Free Audit
             </button>
           </div>
@@ -43,11 +43,11 @@ export default function FreeAuditSection() {
               Get a 1-on-1 expert consultation to scale your marketing and sales.
             </p>
 
-            <div className="mt-4 text-sm text-pink-600 font-semibold">
+            <div className="mt-4 text-sm text-blue-500 font-semibold">
               🔥 High Demand Service
             </div>
 
-            <button className="mt-6 w-full bg-pink-600 text-white py-3 rounded-xl hover:bg-black transition">
+            <button className="mt-6 w-full bg-blue-500 text-white py-3 rounded-xl hover:bg-black transition">
               Book Strategy Call
             </button>
           </div>
@@ -61,11 +61,11 @@ export default function FreeAuditSection() {
               Discover what your competitors are doing and how to beat them.
             </p>
 
-            <div className="mt-4 text-sm text-pink-600 font-semibold">
+            <div className="mt-4 text-sm text-blue-500 font-semibold">
               🚀 Limited Time Offer
             </div>
 
-            <button className="mt-6 w-full bg-black text-white py-3 rounded-xl hover:bg-pink-600 transition">
+            <button className="mt-6 w-full bg-black text-white py-3 rounded-xl hover:bg-blue-500 transition">
               Get Analysis Report
             </button>
           </div>

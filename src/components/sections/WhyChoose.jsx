@@ -193,13 +193,13 @@ export default function TrustCombined({ data }) {
 
         {/* ---------- RIGHT: WHY CHOOSE ---------- */}
         <div>
-          <p className="text-[#e94c89] text-sm font-semibold uppercase mb-3">
+          <p className="text-blue-500 text-sm font-semibold uppercase mb-3">
             {section?.tag}
           </p>
 
           <h2 className="text-3xl md:text-4xl font-bold leading-tight">
             {section?.title}{" "}
-            <span className="text-[#e94c89]">{section?.highlight}</span>
+            <span className="text-blue-500">{section?.highlight}</span>
           </h2>
 
           <p className="text-gray-600 mt-4 mb-8 max-w-lg">
@@ -209,12 +209,12 @@ export default function TrustCombined({ data }) {
           <div className="space-y-6">
             {section?.items?.map((item, index) => (
               <div key={index} className="flex gap-4 group">
-                <div className="text-[#e94c89] font-bold text-xl min-w-[40px]">
+                <div className="text-blue-500 font-bold text-xl min-w-[40px]">
                   {item.number}
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold group-hover:text-[#e94c89] transition">
+                  <h3 className="text-lg font-semibold group-hover:text-blue-500 transition">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 text-sm mt-1">
