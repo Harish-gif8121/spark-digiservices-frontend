@@ -1,11 +1,10 @@
 import Link from "next/link";
-import {blogs} from "@/data/blogs";
+import { blogs } from "@/data/blogs";
 
 export default function BlogSection() {
   return (
     <section className="bg-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
-
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
           <div>
@@ -26,7 +25,7 @@ export default function BlogSection() {
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-10">
-          {blogs.map((blog) => (
+          {blogs.slice(0, 3).map((blog) => (
             <div
               key={blog.id}
               className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition"
@@ -49,9 +48,7 @@ export default function BlogSection() {
                   {blog.title}
                 </h3>
 
-                <p className="text-gray-600 text-sm mb-5">
-                  {blog.desc}
-                </p>
+                <p className="text-gray-600 text-sm mb-5">{blog.desc}</p>
 
                 <Link href={`/blogs/${blog.id}`}>
                   <span className="text-sm font-medium text-black group-hover:text-blue-500">
@@ -62,7 +59,6 @@ export default function BlogSection() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

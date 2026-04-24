@@ -6,12 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
-export default function PopupForm({ open, onClose, source }) {
-
-  console.log("PopupForm ", source);  // Debug log for source prop
+export default function PopupForm({ open, onClose, source, data }) {
+  console.log("PopupForm ", source); // Debug log for source prop
   const [mounted, setMounted] = useState(false);
   const [errors, setErrors] = useState({});
   const router = useRouter();
+  const title = data?.title || "Get Your Free Quote";
 
   useEffect(() => setMounted(true), []);
 
@@ -38,8 +38,7 @@ export default function PopupForm({ open, onClose, source }) {
 
       case "phone":
         if (!value) return "Phone is required";
-        if (!/^[6-9]\d{9}$/.test(value))
-          return "Must start 6-9 & be 10 digits";
+        if (!/^[6-9]\d{9}$/.test(value)) return "Must start 6-9 & be 10 digits";
         return "";
 
       case "company":
@@ -165,136 +164,137 @@ export default function PopupForm({ open, onClose, source }) {
 
             {/* Title */}
             <h2 className="text-xl font-semibold text-center text-[#2b5c9a] mb-5">
-              Get Your Free Quote
+              {title || "Get Your Free Quote"}
             </h2>
 
-           <form onSubmit={handleSubmit} className="space-y-4 text-sm">
+            <form onSubmit={handleSubmit} className="space-y-4 text-sm">
+              {/* Name */}
+              <div className="relative">
+                <input
+                  name="name"
+                  placeholder=" "
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
+                    errors.name ? "border-red-500" : "border-gray-300"
+                  }`}
+                />
+                <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
+                  Name <span className="text-red-500">*</span>
+                </label>
+                {errors.name && (
+                  <p className="text-xs text-red-500 mt-1">{errors.name}</p>
+                )}
+              </div>
 
-  {/* Name */}
-  <div className="relative">
-    <input
-      name="name"
-      placeholder=" "
-      onChange={handleChange}
-      onBlur={handleBlur}
-      className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
-        errors.name ? "border-red-500" : "border-gray-300"
-      }`}
-    />
-    <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
-      Name <span className="text-red-500">*</span>
-    </label>
-    {errors.name && (
-      <p className="text-xs text-red-500 mt-1">{errors.name}</p>
-    )}
-  </div>
+              {/* Email */}
+              <div className="relative">
+                <input
+                  name="email"
+                  placeholder=" "
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
+                    errors.email ? "border-red-500" : "border-gray-300"
+                  }`}
+                />
+                <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
+                  Email <span className="text-red-500">*</span>
+                </label>
+                {errors.email && (
+                  <p className="text-xs text-red-500 mt-1">{errors.email}</p>
+                )}
+              </div>
 
-  {/* Email */}
-  <div className="relative">
-    <input
-      name="email"
-      placeholder=" "
-      onChange={handleChange}
-      onBlur={handleBlur}
-      className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
-        errors.email ? "border-red-500" : "border-gray-300"
-      }`}
-    />
-    <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
-      Email <span className="text-red-500">*</span>
-    </label>
-    {errors.email && (
-      <p className="text-xs text-red-500 mt-1">{errors.email}</p>
-    )}
-  </div>
+              {/* Phone */}
+              <div className="relative">
+                <input
+                  name="phone"
+                  placeholder=" "
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
+                    errors.phone ? "border-red-500" : "border-gray-300"
+                  }`}
+                />
+                <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
+                  Phone <span className="text-red-500">*</span>
+                </label>
+                {errors.phone && (
+                  <p className="text-xs text-red-500 mt-1">{errors.phone}</p>
+                )}
+              </div>
 
-  {/* Phone */}
-  <div className="relative">
-    <input
-      name="phone"
-      placeholder=" "
-      onChange={handleChange}
-      onBlur={handleBlur}
-      className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
-        errors.phone ? "border-red-500" : "border-gray-300"
-      }`}
-    />
-    <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
-      Phone <span className="text-red-500">*</span>
-    </label>
-    {errors.phone && (
-      <p className="text-xs text-red-500 mt-1">{errors.phone}</p>
-    )}
-  </div>
+              {/* Company */}
+              <div className="relative">
+                <input
+                  name="company"
+                  placeholder=" "
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
+                    errors.company ? "border-red-500" : "border-gray-300"
+                  }`}
+                />
+                <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
+                  Company <span className="text-red-500">*</span>
+                </label>
+                {errors.company && (
+                  <p className="text-sm text-red-500 mt-1">{errors.company}</p>
+                )}
+              </div>
 
-  {/* Company */}
-  <div className="relative">
-    <input
-      name="company"
-      placeholder=" "
-      onChange={handleChange}
-      onBlur={handleBlur}
-      className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
-        errors.company ? "border-red-500" : "border-gray-300"
-      }`}
-    />
-    <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
-      Company <span className="text-red-500">*</span>
-    </label>
-    {errors.company && (
-      <p className="text-sm text-red-500 mt-1">{errors.company}</p>
-    )}
-  </div>
+              {/* Service */}
+              <div className="relative">
+                <select
+                  name="service"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={`w-full border px-3 py-2 rounded-md text-sm ${
+                    errors.service ? "border-red-500" : "border-gray-300"
+                  }`}
+                >
+                  <option value="">
+                    Select Service <span className="text-red-500">*</span>
+                  </option>
+                  <option>SEO</option>
+                  <option>Google Ads</option>
+                  <option>Social Media Marketing</option>
+                  <option>Website Development</option>
+                </select>
+                {errors.service && (
+                  <p className="text-xs text-red-500 mt-1">{errors.service}</p>
+                )}
+              </div>
 
-  {/* Service */}
-  <div className="relative">
-    <select
-      name="service"
-      onChange={handleChange}
-      onBlur={handleBlur}
-      className={`w-full border px-3 py-2 rounded-md text-sm ${
-        errors.service ? "border-red-500" : "border-gray-300"
-      }`}
-    >
-      <option value="">Select Service <span className="text-red-500">*</span></option>
-      <option>SEO</option>
-      <option>Google Ads</option>
-      <option>Social Media Marketing</option>
-      <option>Website Development</option>
-    </select>
-    {errors.service && (
-      <p className="text-xs text-red-500 mt-1">{errors.service}</p>
-    )}
-  </div>
-
-  {/* Message */}
-  <div className="relative">
-    <textarea
-      name="message"
-      rows="2"
-      placeholder=" "
-      onChange={handleChange}
-      onBlur={handleBlur}
-      className={`w-full border px-3 py-2 rounded-md text-sm ${
-        errors.message ? "border-red-500" : "border-gray-300"
-      }`}
-    />
-    <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
-      Message <span className="text-red-500">*</span>
-    </label>
-    {errors.message && (
-      <p className="text-xs text-red-500 mt-1">{errors.message}</p>
-    )}
-  </div>
-  {/* Submit */}
-  <button className="w-full bg-[#e94c89] hover:bg-[#781139] text-white py-2.5 rounded-md text-sm font-medium">
-    Submit
-  </button>
-</form>
+              {/* Message */}
+              <div className="relative">
+                <textarea
+                  name="message"
+                  rows="2"
+                  placeholder=" "
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={`w-full border px-3 py-2 rounded-md text-sm ${
+                    errors.message ? "border-red-500" : "border-gray-300"
+                  }`}
+                />
+                <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
+                  Message <span className="text-red-500">*</span>
+                </label>
+                {errors.message && (
+                  <p className="text-xs text-red-500 mt-1">{errors.message}</p>
+                )}
+              </div>
+              {/* Submit */}
+              <button className="w-full bg-[#e94c89] hover:bg-[#781139] text-white py-2.5 rounded-md text-sm font-medium">
+                Submit
+              </button>
+            </form>
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>,
-    document.body
+    document.body,
   );
 }

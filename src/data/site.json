@@ -148,7 +148,12 @@
       "name": "Education",
       "description": "Digital marketing solutions for schools and institutions.",
       "icon": "education"
-    }
+    },
+    {
+  "name": "Finance",
+  "description": "Digital solutions for banks, NBFCs, and financial service providers to build trust and generate qualified leads.",
+  "icon": "finance"
+}
   ]
 },
 

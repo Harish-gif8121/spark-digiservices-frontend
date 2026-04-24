@@ -6,7 +6,7 @@ import {
   FaStore,
   FaPaintBrush,
   FaTruck,
-  FaGraduationCap
+  FaGraduationCap,
 } from "react-icons/fa";
 
 export default function IndustriesSection({ data }) {
@@ -19,17 +19,16 @@ export default function IndustriesSection({ data }) {
     store: <FaStore size={24} />,
     design: <FaPaintBrush size={24} />,
     truck: <FaTruck size={24} />,
-    education: <FaGraduationCap size={24} />
+    education: <FaGraduationCap size={24} />,
+    finance: <FaBuilding size={24} />,
   };
 
   return (
     <section className="relative bg-gradient-to-b from-white to-gray-50 py-20 px-4 overflow-hidden">
-      
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-100 blur-3xl opacity-30 rounded-full"></div>
 
       <div className="max-w-7xl mx-auto text-center relative z-10">
-
         {/* Tag */}
         <p className="text-blue-500 font-semibold mb-3 tracking-widest uppercase text-sm">
           {industries.tag}
@@ -56,12 +55,13 @@ export default function IndustriesSection({ data }) {
               className="relative group rounded-2xl p-[1px] bg-gradient-to-br from-blue-100 to-transparent hover:from-blue-500 hover:to-indigo-500 transition duration-300"
             >
               <div className="bg-white rounded-2xl p-6 h-full flex flex-col items-center text-center shadow-sm group-hover:shadow-xl transition duration-300">
-
                 {/* Icon */}
-                <div className="w-14 h-14 mb-5 flex items-center justify-center rounded-xl 
+                <div
+                  className="w-14 h-14 mb-5 flex items-center justify-center rounded-xl 
                 bg-blue-50 text-blue-500 
                 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-indigo-500 
-                group-hover:text-white transition duration-300 shadow-sm group-hover:shadow-md">
+                group-hover:text-white transition duration-300 shadow-sm group-hover:shadow-md"
+                >
                   {iconMap[item.icon]}
                 </div>
 
@@ -75,16 +75,15 @@ export default function IndustriesSection({ data }) {
                   {item.description}
                 </p>
 
-               <Link href="/contact">
-  <span className="text-sm font-semibold text-blue-500 group-hover:text-indigo-600 transition flex items-center gap-1">
-    Learn More →
-  </span>
-</Link>
+                <Link href="/contact">
+                  <span className="text-sm font-semibold text-blue-500 group-hover:text-indigo-600 transition flex items-center gap-1">
+                    Learn More →
+                  </span>
+                </Link>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -90,30 +90,41 @@ const services = [
   },
 ];
 
-const button={
+const button = {
   title: "Get our services",
-}
+};
 
 export default function ServicesSection() {
   return (
     <section className="bg-gray-50 py-20 px-6">
       <div className="max-w-7xl mx-auto">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          {/* LEFT CONTENT */}
+          <div className="text-center mx-auto max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white border shadow-sm text-xs text-blue-600 mb-5">
+              <Sparkles className="w-4 h-4" />
+              Premium Digital Services
+            </div>
 
-        {/* HEADER */}
-        <div className="text-center max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white border shadow-sm text-xs text-blue-600 mb-5">
-            <Sparkles className="w-4 h-4" />
-            Premium Digital Services
+            <h2 className="text-4xl font-bold text-gray-900">
+              Interactive Digital{" "}
+              <span className="text-blue-600">Solutions</span>
+            </h2>
+
+            <p className="text-gray-500 mt-4">
+              Transform your business with cutting-edge strategies and creative
+              excellence.
+            </p>
           </div>
 
-          <h2 className="text-4xl font-bold text-gray-900">
-            Interactive Digital{" "}
-            <span className="text-blue-600">Solutions</span>
-          </h2>
-
-          <p className="text-gray-500 mt-4">
-            Transform your business with cutting-edge strategies and creative excellence.
-          </p>
+          {/* RIGHT BUTTON */}
+          <Link
+            href="/services"
+            className="hidden md:inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition"
+          >
+            All Services
+            <ArrowUpRight className="w-4 h-4" />
+          </Link>
         </div>
 
         {/* GRID */}
@@ -125,13 +136,8 @@ export default function ServicesSection() {
 
         {/* CTA SECTION */}
         <div className="mt-10 text-center">
-         
-
-            
-          <FormTrigger data={button}
-          source="homepage_services" />
+          <FormTrigger data={button} source="homepage_services" />
         </div>
-
       </div>
     </section>
   );
@@ -144,10 +150,8 @@ function Card({ service, index }) {
   return (
     <Link href={service.href} className="group perspective block">
       <div className="relative h-[240px] transition-transform duration-700 preserve-3d group-hover:rotate-y-180">
-
         {/* FRONT */}
         <div className="absolute inset-0 bg-white rounded-xl border border-gray-200 shadow-sm px-5 py-4 flex flex-col justify-between backface-hidden transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1">
-
           {/* Top Accent */}
           <div className="absolute top-0 left-0 h-[2px] w-0 bg-blue-500 group-hover:w-full transition-all duration-500" />
 
@@ -185,7 +189,6 @@ function Card({ service, index }) {
 
         {/* BACK */}
         <div className="absolute inset-0 bg-gray-900 text-white rounded-xl px-5 py-4 rotate-y-180 backface-hidden flex flex-col justify-between">
-
           <div>
             <h3 className="text-base font-semibold">{service.title}</h3>
 
@@ -204,7 +207,6 @@ function Card({ service, index }) {
             <ArrowUpRight className="w-4 h-4" />
           </span>
         </div>
-
       </div>
 
       {/* 3D Styles */}

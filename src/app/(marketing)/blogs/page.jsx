@@ -12,7 +12,7 @@ export default function BlogsPage() {
 
         <div className="grid md:grid-cols-3 gap-10">
           {blogs.map((blog) => (
-            <div key={blog.id} className="border rounded-xl overflow-hidden shadow-sm">
+            <div key={blog.id}  className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition">
               <img src={blog.image} className="h-52 w-full object-cover" />
 
               <div className="p-5">

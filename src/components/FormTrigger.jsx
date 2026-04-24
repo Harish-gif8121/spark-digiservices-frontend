@@ -18,7 +18,7 @@ export default function FormTrigger({ data = {}, source }) {
         <ArrowRight size={10} className="w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
       </button>
 
-      <PopupForm open={open} onClose={() => setOpen(false)} source={source} />
+      <PopupForm open={open} onClose={() => setOpen(false)} source={source} data={data} />
     </>
   );
 }
