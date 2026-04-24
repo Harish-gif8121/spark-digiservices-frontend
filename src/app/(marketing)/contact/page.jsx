@@ -11,7 +11,11 @@ export default function Page() {
   return (
     <main className="mx-auto">
       {/* Hero Section */}
-     <ServiceHero service={heroes.contact} />
+     <ServiceHero
+             title={heroes.contact.heroTitle}
+             description={heroes.contact.heroDescription}
+             breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact Us" }]}
+           />
       <ServicesMarquee />
 <WhyChoose data={whyChoose} />
     <ContactSectionform />

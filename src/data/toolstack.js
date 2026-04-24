@@ -4,73 +4,183 @@ export const toolStack = {
       {
         title: "Business Websites",
         description:
-          "A well-designed business website is the foundation of your brand’s online presence. It builds credibility and supports long-term growth—whether you're a startup or an enterprise.",
+          "A well-designed business website is the foundation of your brand’s online presence.",
         icon: "💼",
       },
       {
         title: "E-Commerce Websites",
         description:
-          "E-commerce websites enable businesses to sell products or services online with ease. A well-built platform boosts sales, expands reach, and operates 24/7.",
+          "E-commerce websites enable businesses to sell products or services online.",
         icon: "🛒",
       },
       {
         title: "Educational Websites",
         description:
-          "Educational websites are designed for e-learning platforms and coaching centers to deliver courses, test prep, and skill-based training efficiently.",
+          "Educational websites are designed for e-learning platforms.",
         icon: "📘",
       },
       {
         title: "Landing Pages",
         description:
-          "Landing pages are conversion-focused pages built to capture leads, promote offers, and drive user actions with strong calls-to-action.",
+          "Landing pages are conversion-focused pages built to capture leads.",
         icon: "📄",
       },
       {
         title: "Entertainment Websites",
-        description:
-          "Entertainment websites provide engaging content like videos, music, games, and news to keep users engaged and returning.",
+        description: "Entertainment websites provide engaging content.",
         icon: "🎬",
       },
       {
         title: "News or Magazine Websites",
-        description:
-          "News and magazine websites deliver timely updates, articles, and features across various topics with high readability and engagement.",
+        description: "News websites deliver timely updates and articles.",
         icon: "📰",
       },
     ],
-
-    strategy: [
+    // ✅ BACKEND + CMS + HOSTING + ANALYTICS
+    analytics: [
+      // Backend
       {
-        name: "Jira",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        name: "Node.js",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968322.png",
       },
       {
-        name: "Slack",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        name: "Express.js",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968322.png",
+      },
+      {
+        name: "Django",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png",
+      },
+      {
+        name: "Laravel",
+        icon: "https://cdn-icons-png.flaticon.com/512/919/919830.png",
+      },
+
+      // CMS
+      {
+        name: "WordPress",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968756.png",
+      },
+      {
+        name: "Shopify",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968777.png",
+      },
+      {
+        name: "Webflow",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png",
+      },
+
+      // Hosting & Deployment
+      {
+        name: "Vercel",
+        icon: "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png",
+      },
+      {
+        name: "Netlify",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968672.png",
+      },
+      {
+        name: "AWS",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968885.png",
+      },
+      {
+        name: "Firebase",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968322.png",
+      },
+
+      // Database
+      {
+        name: "MongoDB",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968342.png",
+      },
+      {
+        name: "MySQL",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968313.png",
+      },
+      {
+        name: "PostgreSQL",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968342.png",
+      },
+
+      // Performance / Testing
+      {
+        name: "Google Lighthouse",
+        icon: "https://developers.google.com/web/tools/lighthouse/images/lighthouse-logo.svg",
+      },
+      {
+        name: "GTmetrix",
+        icon: "https://gtmetrix.com/static/images/gtmetrix-logo.svg",
+      },
+      {
+        name: "Chrome DevTools",
+        icon: "https://cdn-icons-png.flaticon.com/512/732/732212.png",
+      },
+    ],
+    // ✅ DEVELOPMENT / TECH STACK
+    strategy: [
+      {
+        name: "VS Code",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
+      },
+      {
+        name: "GitHub",
+        icon: "https://cdn-icons-png.flaticon.com/512/733/733553.png",
+      },
+      {
+        name: "GitLab",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968853.png",
+      },
+      {
+        name: "Bitbucket",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png",
       },
     ],
 
+    // ✅ DESIGN TOOLS
     content: [
       {
         name: "Figma",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png",
       },
       {
         name: "Adobe XD",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968520.png",
+      },
+      {
+        name: "Sketch",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968704.png",
+      },
+      {
+        name: "Canva",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png",
       },
     ],
 
-    ads: [],
-
-    analytics: [
+    // ✅ FRONTEND + FRAMEWORKS
+    ads: [
       {
-        name: "Hotjar",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        name: "React.js",
+        icon: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png",
       },
       {
-        name: "Google Analytics",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        name: "Next.js",
+        icon: "https://cdn-icons-png.flaticon.com/512/919/919851.png",
+      },
+      {
+        name: "Vue.js",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968672.png",
+      },
+      {
+        name: "Angular",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968670.png",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+      },
+      {
+        name: "Bootstrap",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968672.png",
       },
     ],
   },
@@ -128,7 +238,7 @@ export const toolStack = {
     ],
   },
 
-  "seo": {
+  seo: {
     websiteTypes: [
       {
         title: "On-Page SEO",
@@ -179,85 +289,161 @@ export const toolStack = {
         icon: "📱",
       },
     ],
-    strategy: [
+    technicalSeo: [
       {
-        name: "Hootsuite",
-        icon: "https://static-www.adweek.com/wp-content/uploads/2022/07/Hootsuite-REBRAND-HERO-2022.jpg?w=1200",
+        name: "Screaming Frog",
+        icon: "https://upload.wikimedia.org/wikipedia/en/5/5b/Screaming_Frog_logo.png",
       },
+      {
+        name: "Sitebulb",
+        icon: "https://sitebulb.com/images/sitebulb-logo.svg",
+      },
+      {
+        name: "Google PageSpeed Insights",
+        icon: "https://developers.google.com/static/speed/images/psi-icon.png",
+      },
+      {
+        name: "GTmetrix",
+        icon: "https://gtmetrix.com/static/images/gtmetrix-logo.svg",
+      },
+      {
+        name: "DeepCrawl",
+        icon: "https://www.lumar.io/wp-content/uploads/2023/05/lumar-logo.svg",
+      },
+      {
+        name: "Ahrefs Site Audit",
+        icon: "https://ahrefs.com/images/ahrefs-logo.svg",
+      },
+      {
+        name: "SEMrush Site Audit",
+        icon: "https://cdn.semrush.com/company-logo.svg",
+      },
+      {
+        name: "Bing Webmaster Tools",
+        icon: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Bing_Fluent_Logo.svg",
+      },
+      {
+        name: "Cloudflare",
+        icon: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Cloudflare_Logo.svg",
+      },
+      {
+        name: "WebPageTest",
+        icon: "https://www.webpagetest.org/images/wpt-logo.svg",
+      },
+    ],
 
+    ecommerceSeo: [
+      { name: "SEMrush", icon: "https://cdn.semrush.com/company-logo.svg" },
+      { name: "Ahrefs", icon: "https://ahrefs.com/images/ahrefs-logo.svg" },
       {
-        name: "Buffer",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        name: "Google Merchant Center",
+        icon: "https://www.gstatic.com/images/branding/product/1x/merchant_center_48dp.png",
       },
       {
-        name: "Sprout Social",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        name: "Ubersuggest",
+        icon: "https://neilpatel.com/wp-content/uploads/2017/09/Ubersuggest-logo.png",
+      },
+      {
+        name: "DataFeedWatch",
+        icon: "https://www.datafeedwatch.com/hubfs/Logo.svg",
+      },
+      {
+        name: "Shopify SEO Apps",
+        icon: "https://cdn.shopify.com/shopifycloud/web/assets/v1/favicon.ico",
+      },
+      {
+        name: "WooCommerce SEO Plugins",
+        icon: "https://woocommerce.com/wp-content/uploads/2020/03/cropped-woocommerce-logo.png",
+      },
+      {
+        name: "Amazon SEO Tools",
+        icon: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+      },
+    ],
+    // ✅ FROM IMAGE
+    contentMarketing: [
+      {
+        name: "Grammarly",
+        icon: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Grammarly_logo.svg",
+      },
+      {
+        name: "Canva",
+        icon: "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg",
+      },
+      {
+        name: "BuzzSumo",
+        icon: "https://buzzsumo.com/wp-content/uploads/2018/01/buzzsumo-icon.png",
+      },
+      {
+        name: "AnswerThePublic",
+        icon: "https://answerthepublic.com/static/images/atp-logo.png",
+      },
+      {
+        name: "SEMrush Content Analyzer",
+        icon: "https://cdn.semrush.com/company-logo.svg",
+      },
+      {
+        name: "Surfer SEO",
+        icon: "https://surferseo.com/wp-content/uploads/2021/05/surfer-logo.svg",
+      },
+      {
+        name: "CoSchedule Headline Analyzer",
+        icon: "https://coschedule.com/img/brand/coschedule-icon.png",
       },
       {
         name: "Trello",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968853.png",
       },
       {
-        name: "Asana",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        name: "Hemingway Editor",
+        icon: "https://hemingwayapp.com/img/hemingway-editor.png",
       },
       {
-        name: "Monday.com",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        name: "Clearscope",
+        icon: "https://www.clearscope.io/wp-content/uploads/2020/05/cropped-clearscope-icon.png",
       },
     ],
-    content: [
-      {
-        name: "Photoshop",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
-      },
-      {
-        name: "Illustrator",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
-      },
-      {
-        name: "Premiere Pro",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
-      },
-      {
-        name: "After Effects",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
-      },
-    ],
-    ads: [
-      {
-        name: "Google Ads",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
-      },
-      {
-        name: "Facebook Ads",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
-      },
-      {
-        name: "LinkedIn Ads",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
-      },
-      {
-        name: "Twitter Ads",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
-      },
-    ],
-    analytics: [
+
+    analyticsTools: [
       {
         name: "Google Analytics",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png",
       },
       {
-        name: "Sprout Reports",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        name: "Hotjar",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
       },
       {
-        name: "Brandwatch",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        name: "Crazy Egg",
+        icon: "https://www.crazyegg.com/images/favicon.ico",
       },
       {
-        name: "Quintly",
-        icon: "https://cdn-icons-png.flaticon.com/512/3823/3823740.png",
+        name: "Matomo",
+        icon: "https://matomo.org/wp-content/uploads/2018/07/matomo-logo.png",
+      },
+      {
+        name: "Clicky",
+        icon: "https://clicky.com/images/favicon.ico",
+      },
+      {
+        name: "Adobe Analytics",
+        icon: "https://cdn.worldvectorlogo.com/logos/adobe-analytics.svg",
+      },
+      {
+        name: "Google Tag Manager",
+        icon: "https://www.gstatic.com/images/branding/product/1x/tag_manager_48dp.png",
+      },
+      {
+        name: "Piwik PRO",
+        icon: "https://piwik.pro/wp-content/uploads/2020/11/favicon-32x32.png",
+      },
+      {
+        name: "Databox",
+        icon: "https://databox.com/wp-content/uploads/2020/04/databox-logo.svg",
+      },
+      {
+        name: "Looker Studio",
+        icon: "https://www.gstatic.com/analytics-suite/header/suite/v2/ic_data_studio.svg",
       },
     ],
   },
@@ -306,6 +492,117 @@ export const toolStack = {
           "We manage your presence on X (Twitter) with engaging posts, trends, and campaigns to boost brand visibility and audience interaction.",
         icon: "🐦",
       },
+    ],
+
+    // ✅ Social Media Strategy Tools
+    strategyTools: [
+      {
+        name: "Hootsuite",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968875.png",
+      },
+      {
+        name: "Buffer",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968878.png",
+      },
+      {
+        name: "Sprout Social",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968863.png",
+      },
+      {
+        name: "Trello",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968853.png",
+      },
+      {
+        name: "CoSchedule",
+        icon: "https://coschedule.com/img/brand/coschedule-icon.png",
+      },
+      {
+        name: "Asana",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968879.png",
+      },
+      {
+        name: "Monday.com",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968898.png",
+      },
+      {
+        name: "Planable",
+        icon: "https://planable.io/wp-content/uploads/2021/04/cropped-planable-favicon.png",
+      },
+      { name: "MeetEdgar", icon: "https://meetedgar.com/favicon.ico" },
+      { name: "Loomly", icon: "https://www.loomly.com/favicon.ico" },
+    ],
+
+    // ✅ Content Creation Tools
+    contentTools: [
+      {
+        name: "Adobe Photoshop",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968520.png",
+      },
+      {
+        name: "Adobe Illustrator",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968472.png",
+      },
+      {
+        name: "Adobe Premiere Pro",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968525.png",
+      },
+      {
+        name: "Adobe After Effects",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968514.png",
+      },
+    ],
+
+    // ✅ Paid Social Ads
+    adsTools: [
+      {
+        name: "Facebook Ads Manager",
+        icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
+      },
+      // { name: "Google Ads", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968342.png" },
+      {
+        name: "LinkedIn Campaign Manager",
+        icon: "https://cdn-icons-png.flaticon.com/512/3536/3536505.png",
+      },
+      {
+        name: "Twitter Ads",
+        icon: "https://cdn-icons-png.flaticon.com/512/733/733579.png",
+      },
+      {
+        name: "Pinterest Ads",
+        icon: "https://cdn-icons-png.flaticon.com/512/733/733558.png",
+      },
+    ],
+
+    // ✅ Analytics Tools
+    analyticsTools: [
+      {
+        name: "Google Analytics",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png",
+      },
+      {
+        name: "Hootsuite Analytics",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968875.png",
+      },
+      {
+        name: "Sprout Social Reports",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968863.png",
+      },
+      {
+        name: "Buffer Analytics",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968878.png",
+      },
+      {
+        name: "Socialbakers",
+        icon: "https://www.socialbakers.com/favicon.ico",
+      },
+      {
+        name: "Brandwatch",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968872.png",
+      },
+      { name: "Rival IQ", icon: "https://www.rivaliq.com/favicon.ico" },
+      { name: "Quintly", icon: "https://www.quintly.com/favicon.ico" },
+      { name: "DashThis", icon: "https://dashthis.com/favicon.ico" },
+      { name: "Iconosquare", icon: "https://www.iconosquare.com/favicon.ico" },
     ],
   },
 
@@ -359,6 +656,41 @@ export const toolStack = {
           "We run local Google Ads campaigns to drive nearby customers to your business location, increasing store visits and local conversions.",
         icon: "📍",
       },
+    ],
+    marketingTools: [
+      {
+        name: "Analytics",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968875.png",
+      },
+      {
+        name: "AdWords",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968878.png",
+      },
+      {
+        name: "My Business",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968863.png",
+      },
+      {
+        name: "Search Console",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968853.png",
+      },
+      {
+        name: "Tag Manager",
+        icon: "https://coschedule.com/img/brand/coschedule-icon.png",
+      },
+      {
+        name: "Web Optimize",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968879.png",
+      },
+      {
+        name: "Trends",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968898.png",
+      },
+      {
+        name: "Keywords",
+        icon: "https://planable.io/wp-content/uploads/2021/04/cropped-planable-favicon.png",
+      },
+      { name: "Bard AI", icon: "https://meetedgar.com/favicon.ico" },
     ],
   },
 };

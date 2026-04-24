@@ -36,7 +36,17 @@ export default async function ServicePage({ params }) {
 
   return (
     <main className="mx-auto">
-      <ServiceHero service={service} />
+      {/* <ServiceHero service={service} />
+       */}
+       <ServiceHero
+  title={service.heroTitle}
+  description={service.heroDescription}
+  breadcrumbs={[
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: service.heroTitle },
+  ]}
+/>
       <ServicesMarquee />
 
       <WebsiteTypes items={toolData?.websiteTypes || []} />

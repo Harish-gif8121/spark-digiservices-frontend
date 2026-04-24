@@ -11,11 +11,11 @@ export default function FormTrigger({ data = {}, source }) {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="inline-flex items-center gap-2 bg-[#0069fb] hover:bg-[#09336f] text-white px-10 py-4 rounded-full text-sm tracking-wider font-semibold transition duration-300"
+        className="group inline-flex items-center gap-2 bg-[#0069fb] hover:bg-[#09336f] text-white px-10 py-4 rounded-full text-sm tracking-wider font-semibold transition duration-300"
       >
         {data.title || "Get in touch"}
 
-        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+        <ArrowRight size={10} className="w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
       </button>
 
       <PopupForm open={open} onClose={() => setOpen(false)} source={source} />

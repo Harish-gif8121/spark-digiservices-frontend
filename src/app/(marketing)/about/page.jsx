@@ -13,16 +13,15 @@ export default function AboutPage() {
 
   return (
     <main className="mx-auto">
-
-      {/* SAME HERO / BANNER */}
-      <ServiceHero service={heroes.about} />
+      <ServiceHero
+        title={heroes.about.heroTitle}
+        description={heroes.about.heroDescription}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
+      />
       <ServicesMarquee />
       <AboutSection />
       <WhyChoose data={whyChoose} />
       <ContactSection />
-
-     
-
     </main>
   );
 }

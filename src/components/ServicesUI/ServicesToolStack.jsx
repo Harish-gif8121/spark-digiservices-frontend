@@ -5,34 +5,39 @@ const Section = ({ title, tools }) => {
   if (!tools || tools.length === 0) return null;
 
   return (
-    <div className="mt-14">
-      <h3 className="text-xl md:text-2xl font-semibold mb-8 text-center text-gray-800">
+    <div className="mt-20">
+      {/* Section Title */}
+      <h3 className="text-2xl md:text-3xl font-semibold mb-12 text-center text-gray-900 relative inline-block">
         {title}
+        <span className="block h-[3px] w-10 bg-[#e94c89] mx-auto mt-3 rounded-full"></span>
       </h3>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      {/* Tools Grid */}
+      <div className="flex flex-wrap justify-center gap-12">
         {tools.map((tool, index) => (
           <div
             key={index}
-            className="group flex flex-col items-center justify-center text-center py-6 transition-all duration-300 hover:-translate-y-1"
+            className="group flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2"
           >
-            {/* ICON ONLY (No box) */}
+            {/* Icon Wrapper */}
             <div className="relative flex items-center justify-center">
-              {/* Soft glow */}
-              <div className="absolute w-20 h-20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
+              {/* Glow effect */}
+              <div className="absolute w-20 h-20 bg-[#e94c89]/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
 
-              {/* Image */}
-              <Image
-                src={tool.icon}
-                alt={tool.name}
-                width={64}
-                height={64}
-                className="object-contain transition duration-300"
-              />
+              {/* Icon */}
+              <div className="bg-gray-50 p-4 rounded-2xl shadow-sm group-hover:shadow-md transition duration-300">
+                <Image
+                  src={tool.icon}
+                  alt={tool.name}
+                  width={50}
+                  height={50}
+                  className="object-contain"
+                />
+              </div>
             </div>
 
-            {/* NAME */}
-            <p className="mt-3 text-sm font-medium text-gray-600 group-hover:text-[#e94c89] transition">
+            {/* Name */}
+            <p className="mt-4 text-sm font-medium text-gray-700 group-hover:text-[#e94c89] transition">
               {tool.name}
             </p>
           </div>
@@ -47,33 +52,100 @@ export default function ServicesToolStack({ service }) {
 
   if (!data) return null;
 
+  const sections = [];
+
+  if (data.technicalSeo) {
+    sections.push({
+      title: "Technical SEO Tools",
+      tools: data.technicalSeo,
+    });
+  }
+
+  if (data.ecommerceSeo) {
+    sections.push({
+      title: "E-Commerce SEO Tools",
+      tools: data.ecommerceSeo,
+    });
+  }
+
+  if (data.strategy) {
+    sections.push({
+      title: "Strategy Tools",
+      tools: data.strategy,
+    });
+  }
+
+  if (data.content) {
+    sections.push({
+      title: "Content Tools",
+      tools: data.content,
+    });
+  }
+
+  if (data.ads) {
+    sections.push({
+      title: "Advertising Tools",
+      tools: data.ads,
+    });
+  }
+
+  if (data.analytics) {
+    sections.push({
+      title: "Analytics Tools",
+      tools: data.analytics,
+    });
+  }
+
+  if (data.contentMarketing) {
+    sections.push({
+      title: "Content Marketing Tools",
+      tools: data.contentMarketing,
+    });
+  }
+
+  if (data.analyticsTools) {
+    sections.push({
+      title: "Analytics & Performance Monitoring",
+      tools: data.analyticsTools,
+    });
+  }
+if (data.strategyTools) {
+  sections.push({
+    title: "Social Media Strategy Tools",
+    tools: data.strategyTools,
+  });
+}
+if (data.marketingTools) {
+  sections.push({
+    title: "Marketing tools by Google",
+    tools: data.marketingTools,
+  });
+}
+
+if (data.contentTools) {
+  sections.push({
+    title: "Content Creation Tools",
+    tools: data.contentTools,
+  });
+}
+
+if (data.adsTools) {
+  sections.push({
+    title: "Paid Social Advertising Platforms",
+    tools: data.adsTools,
+  });
+}
+
+
+  if (sections.length === 0) return null;
+
   return (
-    <section className="relative py-24 px-6 bg-gradient-to-b from-white via-gray-50 to-white">
+    <section className="bg-white pb-10 px-6">
       <div className="max-w-7xl mx-auto text-center">
-        {/* Top Badge */}
-        <p className="text-[#e94c89] uppercase tracking-[0.2em] text-xs mb-3 font-semibold">
-          * Tools We Use
-        </p>
-
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold mb-5 text-gray-900 leading-tight">
-          Explore Our <span className="text-[#e94c89]">Tool Stack</span>
-        </h2>
-
-        {/* Description */}
-        <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-          Discover the tools and technologies we use to optimize campaigns,
-          drive traffic, and boost ROI.
-        </p>
-
         {/* Sections */}
-        <Section
-          title="Digital Marketing Strategy Tools"
-          tools={data.strategy}
-        />
-        <Section title="Content Creation Tools" tools={data.content} />
-        <Section title="Paid Advertising Platforms" tools={data.ads} />
-        <Section title="Analytics & Reporting Tools" tools={data.analytics} />
+        {sections.map((sec, i) => (
+          <Section key={i} title={sec.title} tools={sec.tools} />
+        ))}
       </div>
     </section>
   );
