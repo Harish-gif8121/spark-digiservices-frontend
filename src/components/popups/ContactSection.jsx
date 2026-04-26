@@ -175,7 +175,9 @@ export default function ContactSection() {
             </div>
             <div>
               <p className="text-sm text-gray-400">Call Us Anytime</p>
+
               <p className="text-lg font-semibold">+91 6300296581</p>
+
             </div>
           </div>
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import Image from "next/image";
 import { Users, Briefcase, TrendingUp, Star } from "lucide-react";
 
 /* ---------------- ICON MAP ---------------- */
@@ -12,7 +11,7 @@ const iconMap = {
   "Client Rating": Star,
 };
 
-/* ---------------- COUNT UP HOOK (SMOOTH) ---------------- */
+/* ---------------- COUNT UP HOOK ---------------- */
 function useCountUp(end, startAnimation, duration = 2000) {
   const [count, setCount] = useState(0);
 
@@ -26,10 +25,7 @@ function useCountUp(end, startAnimation, duration = 2000) {
 
       const progress = timestamp - startTime;
 
-      const value = Math.min(
-        Math.floor((progress / duration) * end),
-        end
-      );
+      const value = Math.min(Math.floor((progress / duration) * end), end);
 
       setCount(value);
 
@@ -44,6 +40,7 @@ function useCountUp(end, startAnimation, duration = 2000) {
   return count;
 }
 
+/* ---------------- STAT CARD ---------------- */
 function StatCard({ label, value, suffix, color, trend, startAnimation }) {
   const count = useCountUp(value, startAnimation);
   const Icon = iconMap[label] ?? Users;
@@ -58,43 +55,57 @@ function StatCard({ label, value, suffix, color, trend, startAnimation }) {
   const { bg, text } = colorMap[color] ?? colorMap["purple"];
 
   return (
-    <div className="relative group overflow-hidden rounded-xl bg-white border border-gray-100 p-4 hover:border-gray-200 hover:-translate-y-0.5 transition-all duration-200">
-      
+    <div
+      className="relative group overflow-hidden rounded-xl 
+    bg-white/60 backdrop-blur-md 
+    border border-gray-200/40 
+    shadow-lg hover:shadow-xl 
+    p-4 transition-all duration-300 hover:-translate-y-1"
+    >
+      {/* Inner gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none"></div>
+
       {/* Accent */}
       <div
-        className="absolute top-0 right-0 w-1 h-1/3 rounded-tr-xl"
+        className="absolute top-0 right-0 w-1 h-1/3 rounded-tr-xl opacity-60"
         style={{ background: bg }}
       />
 
       {/* Icon */}
       <div
-        className="w-8 h-8 rounded-lg flex items-center justify-center mb-2"
+        className="w-8 h-8 rounded-lg flex items-center justify-center mb-2 relative z-10"
         style={{ background: bg }}
       >
         <Icon style={{ color: text }} size={16} />
       </div>
 
-      {/* Count */}
-      <div className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 leading-none">
-        {count}
-        <span style={{ color: text }}>{suffix}</span>
+      <div className="relative z-10 flex items-end gap-1">
+        <span className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 leading-none">
+          {count}
+        </span>
+        <span
+          className="text-lg md:text-xl font-semibold mb-1"
+          style={{ color: text }}
+        >
+          {suffix}
+        </span>
       </div>
 
       {/* Label */}
-      <p className="text-[10px] text-gray-400 uppercase tracking-wider mt-1">
+      <p className="relative z-10 text-[10px] text-gray-400 uppercase tracking-wider mt-1">
         {label}
       </p>
 
       {/* Trend */}
       {trend && (
-        <span className="inline-flex items-center gap-1 mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-50 text-green-700">
+        <span className="relative z-10 inline-flex items-center gap-1 mt-2 px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-50 text-green-700">
           ↗ {trend}
         </span>
       )}
 
       {/* Bottom line */}
       <div
-        className="absolute bottom-0 left-0 h-[2px] rounded-bl-xl"
+        className="absolute bottom-0 left-0 h-[2px] rounded-bl-xl opacity-70"
         style={{ background: text, width: "60%" }}
       />
     </div>
@@ -117,7 +128,7 @@ export default function TrustCombined({ data }) {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     if (sectionRef.current) {
@@ -164,13 +175,15 @@ export default function TrustCombined({ data }) {
       ref={sectionRef}
       className="relative py-20 bg-white overflow-hidden"
     >
-      {/* BG EFFECTS */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#e94c89]/10 rounded-full blur-3xl"></div>
+      {/* Subtle grid texture */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle,black_1px,transparent_1px)] [background-size:20px_20px]"></div>
+
+      {/* BG EFFECTS (softened) */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-[#e94c89]/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-black/5 rounded-full blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
-        
-        {/* ---------- LEFT: STATS ---------- */}
+      <div className="relative max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
+        {/* LEFT: STATS */}
         <div>
           <div className="grid sm:grid-cols-2 gap-6">
             {stats.map((stat, index) => (
@@ -191,7 +204,7 @@ export default function TrustCombined({ data }) {
           </div>
         </div>
 
-        {/* ---------- RIGHT: WHY CHOOSE ---------- */}
+        {/* RIGHT: WHY CHOOSE */}
         <div>
           <p className="text-blue-500 text-sm font-semibold uppercase mb-3">
             {section?.tag}
@@ -209,7 +222,11 @@ export default function TrustCombined({ data }) {
           <div className="space-y-6">
             {section?.items?.map((item, index) => (
               <div key={index} className="flex gap-4 group">
-                <div className="text-blue-500 font-bold text-xl min-w-[40px]">
+                <div
+                  className="min-w-[44px] h-[44px] flex items-center justify-center rounded-full 
+bg-blue-500 text-white font-semibold text-sm shadow-sm 
+border border-blue-800  transition"
+                >
                   {item.number}
                 </div>
 
@@ -225,7 +242,6 @@ export default function TrustCombined({ data }) {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

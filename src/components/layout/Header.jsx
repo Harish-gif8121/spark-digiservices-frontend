@@ -8,13 +8,23 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { FaFacebook } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 import { LiaLinkedin } from "react-icons/lia";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
+  const pathname = usePathname();
+
   const toggleDropdown = (label) => {
     setActiveDropdown(activeDropdown === label ? null : label);
+  };
+
+  // ✅ SAME ROUTE SCROLL FIX
+  const handleNavClick = (href) => {
+    if (pathname === href) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (
@@ -24,7 +34,11 @@ export default function Header() {
         <div className="container mx-auto flex items-center justify-between px-4 py-4">
           
           {/* LOGO */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link
+            href="/"
+            onClick={() => handleNavClick("/")}
+            className="flex items-center gap-2"
+          >
             <Image
               src="/spark-logo.webp"
               alt="Spark Digi Services"
@@ -40,9 +54,10 @@ export default function Header() {
               item.children ? (
                 <div key={item.label} className="relative group">
                   
-                  {/* ✅ CLICKABLE PARENT */}
+                  {/* PARENT */}
                   <Link
                     href={item.href}
+                    onClick={() => handleNavClick(item.href)}
                     className="flex items-center gap-1 hover:text-[#e94c89] transition"
                   >
                     {item.label}
@@ -59,6 +74,7 @@ export default function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
+                          onClick={() => handleNavClick(child.href)}
                           className="block px-5 py-3 text-sm hover:bg-pink-50 hover:text-[#e94c89] transition"
                         >
                           {child.label}
@@ -71,6 +87,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => handleNavClick(item.href)}
                   className="hover:text-[#e94c89] transition"
                 >
                   {item.label}
@@ -111,7 +128,7 @@ export default function Header() {
             </div>
 
             <Link
-              href="/contact"
+              href="tel:+916300296581"
               className="border border-black rounded-full px-6 py-2 text-sm font-semibold hover:bg-black hover:text-white transition"
             >
               +91 6300296581
@@ -119,10 +136,7 @@ export default function Header() {
           </div>
 
           {/* MOBILE MENU BUTTON */}
-          <button
-            className="md:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
+          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -134,11 +148,14 @@ export default function Header() {
               item.children ? (
                 <div key={item.label}>
                   
-                  {/* ✅ CLICKABLE + DROPDOWN TOGGLE */}
+                  {/* PARENT */}
                   <div className="flex justify-between items-center">
                     <Link
                       href={item.href}
-                      onClick={() => setMenuOpen(false)}
+                      onClick={() => {
+                        handleNavClick(item.href);
+                        setMenuOpen(false);
+                      }}
                       className="font-semibold text-gray-800"
                     >
                       {item.label}
@@ -161,7 +178,10 @@ export default function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          onClick={() => setMenuOpen(false)}
+                          onClick={() => {
+                            handleNavClick(child.href);
+                            setMenuOpen(false);
+                          }}
                           className="block text-gray-600 hover:text-[#e94c89]"
                         >
                           {child.label}
@@ -174,7 +194,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => {
+                    handleNavClick(item.href);
+                    setMenuOpen(false);
+                  }}
                   className="block font-semibold text-gray-800 hover:text-[#e94c89]"
                 >
                   {item.label}
@@ -184,44 +207,28 @@ export default function Header() {
 
             {/* SOCIAL */}
             <div className="flex gap-4 pt-4 border-t text-gray-600 text-lg">
-              <Link
-                href="https://www.facebook.com/"
-                target="_blank"
-                className="hover:text-[#e94c89]"
-              >
+              <Link href="https://www.facebook.com/" target="_blank">
                 <FaFacebook />
               </Link>
 
-              <Link
-                href="https://www.instagram.com/"
-                target="_blank"
-                className="hover:text-[#e94c89]"
-              >
+              <Link href="https://www.instagram.com/" target="_blank">
                 <BsInstagram />
               </Link>
 
-              <Link
-                href="https://www.linkedin.com/"
-                target="_blank"
-                className="hover:text-[#e94c89]"
-              >
+              <Link href="https://www.linkedin.com/" target="_blank">
                 <LiaLinkedin />
               </Link>
             </div>
 
-            {/* CTA */}
             <Link
-              href="/contact"
-              className="block text-center border border-black rounded-full px-6 py-3 font-semibold hover:bg-black hover:text-white transition"
+              href="tel:+916300296581"
+              className="border border-black rounded-full px-6 py-2 text-sm font-semibold hover:bg-black hover:text-white transition"
             >
               +91 6300296581
             </Link>
           </div>
         )}
       </header>
-
-      {/* ✅ SPACING FIX FOR FIXED HEADER */}
-      {/* <div className="h-[90px]" /> */}
     </>
   );
 }

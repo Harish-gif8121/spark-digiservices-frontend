@@ -116,5 +116,18 @@
       "Broadcast Campaigns",
       "Lead Engagement Tracking"
     ]
+  },
+  {
+    "slug": "email-marketing",
+    "title": "Email Marketing",
+    "description": "Email marketing campaign management",
+    "heroTitle": "Email Marketing",
+    "heroDescription": "Create and manage effective email campaigns to nurture leads and boost sales.",
+    "features": [
+      "Email List Building",
+      "Custom Email Templates",
+      "Automated Campaigns",
+      "Performance Analytics"
+    ]
   }
 ]

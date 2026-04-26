@@ -1,3 +1,4 @@
+
 export const toolStack = {
   "website-development": {
     websiteTypes: [
@@ -238,7 +239,7 @@ export const toolStack = {
     ],
   },
 
-  seo: {
+  "seo": {
     websiteTypes: [
       {
         title: "On-Page SEO",
@@ -292,7 +293,7 @@ export const toolStack = {
     technicalSeo: [
       {
         name: "Screaming Frog",
-        icon: "https://upload.wikimedia.org/wikipedia/en/5/5b/Screaming_Frog_logo.png",
+        icon: "https://logowik.com/screaming-frog-logo-vector-56632.html",
       },
       {
         name: "Sitebulb",

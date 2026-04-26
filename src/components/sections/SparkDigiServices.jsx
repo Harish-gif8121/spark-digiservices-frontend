@@ -25,12 +25,40 @@ const services = [
     href: "/services/logo-design",
     points: ["Custom brand identity", "Modern styles", "High-resolution files"],
   },
+    {
+    title: "Trademark",
+    icon: ShieldCheck,
+    desc: "Protect your brand legally.",
+    href: "/services/trademark",
+    points: ["Filing", "Approval", "Support"],
+  },
+    {
+    title: "Web Development",
+    icon: Monitor,
+    desc: "Modern fast websites.",
+    href: "/services/website-development",
+    points: ["Responsive", "SEO ready", "Fast"],
+  },
+    {
+    title: "App Development",
+    icon: Smartphone,
+    desc: "Android & iOS apps.",
+    href: "/services/app-development",
+    points: ["Mobile UI", "Secure", "Scalable"],
+  },
   {
     title: "SEO",
     icon: Search,
     desc: "Rank higher and drive organic traffic.",
     href: "/services/seo",
     points: ["Keyword research", "On-page SEO", "Technical fixes"],
+  },
+   {
+    title: "Local SEO",
+    icon: Globe,
+    desc: "Reach nearby customers.",
+    href: "/services/local-seo",
+    points: ["GMB setup", "Maps ranking", "Local leads"],
   },
   {
     title: "Social Media",
@@ -46,34 +74,16 @@ const services = [
     href: "/services/google-ads",
     points: ["Targeting", "Optimization", "Tracking"],
   },
-  {
-    title: "Local SEO",
-    icon: Globe,
-    desc: "Reach nearby customers.",
-    href: "/services/local-seo",
-    points: ["GMB setup", "Maps ranking", "Local leads"],
-  },
-  {
-    title: "Web Development",
-    icon: Monitor,
-    desc: "Modern fast websites.",
-    href: "/services/website-development",
-    points: ["Responsive", "SEO ready", "Fast"],
-  },
-  {
-    title: "App Development",
-    icon: Smartphone,
-    desc: "Android & iOS apps.",
-    href: "/services/app-development",
-    points: ["Mobile UI", "Secure", "Scalable"],
-  },
-  {
-    title: "Trademark",
-    icon: ShieldCheck,
-    desc: "Protect your brand legally.",
-    href: "/services/trademark",
-    points: ["Filing", "Approval", "Support"],
-  },
+
+
+  // {
+  //   title: "App Development",
+  //   icon: Smartphone,
+  //   desc: "Android & iOS apps.",
+  //   href: "/services/app-development",
+  //   points: ["Mobile UI", "Secure", "Scalable"],
+  // },
+
   {
     title: "Email Marketing",
     icon: Mail,
@@ -151,14 +161,14 @@ function Card({ service, index }) {
     <Link href={service.href} className="group perspective block">
       <div className="relative h-[240px] transition-transform duration-700 preserve-3d group-hover:rotate-y-180">
         {/* FRONT */}
-        <div className="absolute inset-0 bg-white rounded-xl border border-gray-200 shadow-sm px-5 py-4 flex flex-col justify-between backface-hidden transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1">
+        <div className="absolute inset-0 bg-white rounded-xl border-2 border-blue-400 shadow-xl px-5 py-4 flex flex-col justify-between backface-hidden transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1">
           {/* Top Accent */}
           <div className="absolute top-0 left-0 h-[2px] w-0 bg-blue-500 group-hover:w-full transition-all duration-500" />
 
-          {/* Number */}
+          {/* Number
           <span className="absolute top-2 right-3 text-[52px] font-bold text-gray-100 leading-none">
             {num}
-          </span>
+          </span> */}
 
           <div>
             {/* ICON */}
@@ -167,7 +177,7 @@ function Card({ service, index }) {
             </div>
 
             {/* TITLE */}
-            <h3 className="mt-3 text-base font-semibold text-gray-800 group-hover:text-blue-600 transition">
+            <h3 className="mt-3 text-2xl xl:text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition">
               {service.title}
             </h3>
 

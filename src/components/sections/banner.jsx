@@ -3,7 +3,7 @@ import site from "@/data/site.json";
 import Animation from "@/components/ui/Animation";
 
 const button = {
-  title: "Get Details"
+  title: "Get Details",
 };
 
 export default function HeroSection() {
@@ -30,9 +30,7 @@ export default function HeroSection() {
           <Animation direction="up" delay={200}>
             <p className="text-lg sm:text-xl mb-4">
               Welcome to{" "}
-              <span className="text-[#e94c89] font-semibold">
-                {site.name}
-              </span>
+              <span className="text-[#e94c89] font-semibold">{site.name}</span>
             </p>
           </Animation>
 
@@ -57,16 +55,18 @@ export default function HeroSection() {
             </p>
           </Animation>
 
-          {/* CTA Buttons */}
-          <Animation direction="up" delay={600}>
-            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-             <FormTrigger data={button} source="homepage_hero" />
-
-              <button className="w-full sm:w-auto border border-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-sm tracking-wider font-semibold hover:bg-white hover:text-black transition duration-300">
-               +91 6300296581
-              </button>
-            </div>
-          </Animation>
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <FormTrigger
+              data={button}
+              source="homepage_hero"
+              className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4"
+            />
+              <Animation direction="up" delay={600}>  
+            <a href="tel:+916300296581" className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 border border-white rounded-full text-sm tracking-wider font-semibold hover:bg-white hover:text-black transition duration-300">
+              +91 6300296581
+            </a>
+              </Animation>
+          </div>
         </div>
       </div>
     </section>

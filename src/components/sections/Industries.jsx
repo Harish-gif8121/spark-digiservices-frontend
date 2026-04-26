@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from "react";
 import {
   FaBuilding,
   FaHeartbeat,
@@ -7,10 +9,52 @@ import {
   FaPaintBrush,
   FaTruck,
   FaGraduationCap,
+  FaUniversity,
 } from "react-icons/fa";
 
-export default function IndustriesSection({ data }) {
-  const industries = data?.industries || data;
+export default function IndustriesSection() {
+  const industries = {
+    title: "INDUSTRIES WE SERVE",
+    subtitle: "MENTION YOUR SLIDE SUBTITLE HERE TO PROVIDE ADDITIONAL CONTEXT",
+    items: [
+      {
+        name: "Agriculture",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "building",
+      },
+      {
+        name: "Automobile",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "truck",
+      },
+      {
+        name: "Finance",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "finance",
+      },
+      {
+        name: "Healthcare",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "health",
+      },
+      {
+        name: "Retail",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "store",
+      },
+      {
+        name: "Education",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "education",
+      },
+    ],
+  };
 
   const iconMap = {
     building: <FaBuilding size={24} />,
@@ -20,69 +64,140 @@ export default function IndustriesSection({ data }) {
     design: <FaPaintBrush size={24} />,
     truck: <FaTruck size={24} />,
     education: <FaGraduationCap size={24} />,
-    finance: <FaBuilding size={24} />,
+    finance: <FaUniversity size={24} />,
+  };
+
+  const itemsList = industries.items;
+  const total = itemsList.length;
+  const [active, setActive] = useState(2); // center card index
+
+  // Responsive: detect if desktop (>= 1024px) to show 5 cards, else 3 cards
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Auto rotate every 2 seconds (was 3s → faster)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % total);
+    }, 1500); // ⬅️ speed increased
+    return () => clearInterval(interval);
+  }, [total]);
+
+  // Position mapping (circular)
+  const getPosition = (index) => {
+    let diff = index - active;
+    const half = total / 2;
+    if (diff > half) diff -= total;
+    if (diff < -half) diff += total;
+
+    if (isDesktop) {
+      // 5-card layout: show diff -2 .. 2
+      if (diff === 0) return "center";
+      if (diff === -1) return "left";
+      if (diff === 1) return "right";
+      if (diff === -2) return "farLeft";
+      if (diff === 2) return "farRight";
+      return "hidden";
+    } else {
+      // 3-card layout: only diff -1, 0, 1
+      if (diff === 0) return "center";
+      if (diff === -1) return "left";
+      if (diff === 1) return "right";
+      return "hidden";
+    }
+  };
+
+  const getStyles = (pos) => {
+    if (isDesktop) {
+      // Desktop: increased horizontal gaps to avoid merging
+      switch (pos) {
+        case "center":
+          return "z-30 translate-x-0 border-[10px] border-[#0f6f78] w-[270px] h-[190px]";
+        case "left":
+          return "z-20 -translate-x-[310px] border-[8px] border-[#b07a7a] w-[270px] h-[190px]"; // was -250
+        case "right":
+          return "z-20 translate-x-[310px] border-[8px] border-[#d96b6b] w-[270px] h-[190px]";  // was +250
+        case "farLeft":
+          return "z-10 -translate-x-[620px] opacity-60 w-[270px] h-[190px]"; // was -500
+        case "farRight":
+          return "z-10 translate-x-[620px] opacity-60 w-[270px] h-[190px]";  // was +500
+        default:
+          return "hidden";
+      }
+    } else {
+      // Mobile/tablet: also increased gaps
+      switch (pos) {
+        case "center":
+          return "z-30 translate-x-0 border-[8px] border-[#0f6f78] w-[230px] h-[170px]";
+        case "left":
+          return "z-20 -translate-x-[260px] border-[6px] border-[#b07a7a] w-[230px] h-[170px]"; // was -210
+        case "right":
+          return "z-20 translate-x-[260px] border-[6px] border-[#d96b6b] w-[230px] h-[170px]";  // was +210
+        default:
+          return "hidden";
+      }
+    }
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-white to-gray-50 py-20 px-4 overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-100 blur-3xl opacity-30 rounded-full"></div>
+    <section className="bg-white py-16 px-4 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        {/* Headings - larger text as requested */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-3xl font-extrabold text-gray-800 tracking-tight">
+            {industries.title}
+          </h2>
+          <p className="text-gray-400 text-sm md:text-base uppercase tracking-wider mt-4">
+            {industries.subtitle}
+          </p>
+        </div>
 
-      <div className="max-w-7xl mx-auto text-center relative z-10">
-        {/* Tag */}
-        <p className="text-blue-500 font-semibold mb-3 tracking-widest uppercase text-sm">
-          {industries.tag}
-        </p>
+        {/* Carousel container */}
+        <div className="relative flex justify-center items-center h-[440px] md:h-[360px] w-full overflow-hidden">
+          {itemsList.map((item, index) => {
+            const pos = getPosition(index);
+            if (pos === "hidden") return null;
 
-        {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          {industries.title.split(" ")[0]}{" "}
-          <span className="bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
-            {industries.title.split(" ")[1]}
-          </span>
-        </h2>
+            return (
+              <div
+                key={index}
+                className={`
+                  absolute transition-all duration-500 ease-in-out
+                  bg-white rounded-xl p-5 flex flex-col justify-center items-center shadow-md
 
-        {/* Subtitle */}
-        <p className="text-gray-500 max-w-2xl mx-auto mb-16 text-lg">
-          {industries.subtitle}
-        </p>
+                  w-[260px] h-[240px] 
+                  md:w-[300px] md:h-[260px] 
+                  lg:w-[320px] lg:h-[280px]
 
-        {/* Cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {industries.items.map((item, index) => (
-            <div
-              key={index}
-              className="relative group rounded-2xl p-[1px] bg-gradient-to-br from-blue-100 to-transparent hover:from-blue-500 hover:to-indigo-500 transition duration-300"
-            >
-              <div className="bg-white rounded-2xl p-6 h-full flex flex-col items-center text-center shadow-sm group-hover:shadow-xl transition duration-300">
-                {/* Icon */}
-                <div
-                  className="w-14 h-14 mb-5 flex items-center justify-center rounded-xl 
-                bg-blue-50 text-blue-500 
-                group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-indigo-500 
-                group-hover:text-white transition duration-300 shadow-sm group-hover:shadow-md"
+                  ${getStyles(pos)}
+                `}
+              >
+                <h3
+                  className={`font-bold text-lg md:text-2xl mb-2 text-center ${
+                    pos === "center" ? "text-[#0f6f78]" : "text-gray-700"
+                  }`}
                 >
-                  {iconMap[item.icon]}
-                </div>
-
-                {/* Title */}
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {item.name}
                 </h3>
 
-                {/* Description */}
-                <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+                <p className="text-gray-500 text-xs md:text-sm mb-3 text-center px-1">
                   {item.description}
                 </p>
 
-                <Link href="/contact">
-                  <span className="text-sm font-semibold text-blue-500 group-hover:text-indigo-600 transition flex items-center gap-1">
-                    Learn More →
-                  </span>
-                </Link>
+                <div className="text-gray-500 text-xl md:text-2xl">
+                  {iconMap[item.icon]}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

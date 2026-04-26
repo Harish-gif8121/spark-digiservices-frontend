@@ -28,7 +28,7 @@ export default function ServiceHero({
       </video>
 
       {/* CONTENT */}
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4 pt-24 py-10 md:pt-0 md:py-0">
         
         {/* TITLE */}
         <h1 className="text-3xl md:text-5xl font-light">
