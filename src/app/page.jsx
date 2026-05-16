@@ -12,22 +12,26 @@ import WhyChoose from '@/components/sections/WhyChoose';
 import ClientsSection from '@/components/sections/ClientsSection';
 import IndustriesSection from '@/components/sections/Industries';
 import FreeAuditSection from '@/components/sections/FreeAuditSection';
+import BlogSection from '@/components/sections/BlogSection';
 
 const page = () => {
   return (
     <div className='mt-10'>
       <Banner />
       <ServicesMarquee/>
-       <TrustStats data={site} />
+       {/* <TrustStats data={site} /> */}
+       <SparkDigiServices/>
        <WhyChoose data={site} />
        <ClientsSection data={site.clientsSection} />
        <IndustriesSection data={site.industries} />
        <TestimonialsClient testimonials={site.testimonials} />
 
-      <SparkDigiServices/>
+      
       <FreeAuditSection />
-       <KeyBenefits/>
+       {/* <KeyBenefits/> */}
+       <BlogSection/>
        <ContactSection/>
+       
     </div>
   )
 }

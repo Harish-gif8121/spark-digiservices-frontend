@@ -1,7 +1,46 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  images: {
+    domains: [
+      "cdn.simpleicons.org",
+      "upload.wikimedia.org",
+      "www.vectorlogo.zone",
+      "assets.vercel.com",
+      "media.istockphoto.com",
+      "www.specbee.com",
+      "developers.google.com",
+      "gtmetrix.com",
+      "sitebulb.com",
+      "www.lumar.io",
+      "ahrefs.com",
+      "cdn.semrush.com",
+      "neilpatel.com",
+      "www.gstatic.com",
+      "answerthepublic.com",
+      "surferseo.com",
+      "coschedule.com",
+      "hemingwayapp.com",
+      "www.clearscope.io",
+      "matomo.org",
+      "databox.com",
+      "piwik.pro",
+      "www.socialbakers.com",
+      "www.rivaliq.com",
+      "www.quintly.com",
+      "dashthis.com",
+      "www.iconosquare.com",
+      "planable.io",
+      "meetedgar.com",
+      "www.loomly.com",
+      "buzzsumo.com",
+      "www.datafeedwatch.com",
+      "woocommerce.com",
+      "cdn.shopify.com",
+      "www.webpagetest.org",
+      "digitali360.com",
+      "encrypted-tbn0.gstatic.com",
+    ],
+  },
 };
 
 export default nextConfig;

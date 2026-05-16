@@ -73,7 +73,7 @@
    "contact": {
     "tagline": "LET'S COLLABORATE",
     "title": "LET'S WORK TOGETHER",
-    "phone": "+91 85 99 00 2222",
+    "phone": "+91 6300296581",
     "email": "info@Sparkdigi Services.com",
     "description": "Sparkdigi Services is a full-service digital agency specializing in innovative solutions for web and app development, digital marketing, branding, and more.",
     "mapEmbed": "https://www.google.com/maps?q=Hyderabad&output=embed"
@@ -148,9 +148,39 @@
       "name": "Education",
       "description": "Digital marketing solutions for schools and institutions.",
       "icon": "education"
-    }
-  ]
+    },
+    {
+  "name": "Finance",
+  "description": "Digital solutions for banks, NBFCs, and financial service providers to build trust and generate qualified leads.",
+  "icon": "finance"
 }
+  ]
+},
+
+  "about": {
+    "title": "About our Company",
+    "description1": "At SparkDigi Services, we believe in igniting digital possibilities.",
+    "description2": "SparkDigi Services is your all-in-one digital marketing partner, committed to driving growth for businesses of every scale. Your success fuels our purpose — let's ignite your digital journey together.",
+    "description3": "Growth isn't just our goal — it's the force that fuels our entire journey.",
+    "stats": [
+      {
+        "label": "years of experience",
+        "value": "25+",
+        "icon": "calendar"
+      },
+      {
+        "label": "happy customers",
+        "value": "100+",
+        "icon": "users"
+      },
+      {
+        "label": "Completed Projects",
+        "value": "130+",
+        "icon": "badge"
+      }
+    ],
+    "image": "https://www.shutterstock.com/image-photo/review-meeting-people-office-guidance-600nw-2712653265.jpg"
+  }
 
 
 }

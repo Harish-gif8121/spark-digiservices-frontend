@@ -1,56 +1,65 @@
 import services from "@/data/services.json";
-import Breadcrumbs from "@/components/layout/BreadCrumbs";
+// import whyChoose from "@/data/site.json";
 import ServiceHero from "@/components/ServicesUI/ServiceHero";
-import ServiceFeatures from "@/components/ServicesUI/ServiceFeatures";
+// import SparkDigiServices from "@/components/sections/SparkDigiServices";
 import { notFound } from "next/navigation";
-import SparkDigiServices from "@/components/sections/SparkDigiServices";
+import ServicesMarquee from "@/components/sections/ServicesMarquee";
+import ServicesToolStack from "@/components/ServicesUI/ServicesToolStack";
+// import WhyChoose from "@/components/sections/WhyChoose";
+// import Testimonials from "@/components/sections/testimonials";
+// import ContactSection from "@/components/sections/contactSection";
+import ContactSection from "@/components/popups/ContactSection";
+import { WebsiteTypes } from "@/components/ServicesUI/WebsiteTypes";
+import { toolStack } from "@/data/toolstack";
+import DynamicSection from "@/components/ServicesUI/DynamicSection";
+import { serviceExtras } from "@/data/serviceExtras";
+import GrowthStatsSection from "@/components/ServicesUI/GrowthStatsSection";
 
-/* Static pages */
+/* Static params */
 export async function generateStaticParams() {
   return services.map((service) => ({
     slug: service.slug,
   }));
 }
-
-/* SEO metadata */
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-
-  const service = services.find((s) => s.slug === slug);
-
-  if (!service) return {};
-
-  return {
-    title: service.title,
-    description: service.description,
-  };
-}
-
-/* Page */
 export default async function ServicePage({ params }) {
-  const { slug } = await params;
+  const resolvedParams = await params;   // ✅ unwrap promise
+  const { slug } = resolvedParams;
 
   const service = services.find((s) => s.slug === slug);
-
   if (!service) notFound();
 
+
+  console.log("service", service);  
+
+  const toolData = toolStack[slug];
+  const extraData = serviceExtras[slug];
+
   return (
-    <main className="container mx-auto mt-24 py-10 bg-white text-black rounded-lg shadow-md px-6">
+    <main className="mx-auto">
+      {/* <ServiceHero service={service} />
+       */}
+       <ServiceHero
+  title={service.heroTitle}
+  description={service.heroDescription}
+  breadcrumbs={[
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: service.heroTitle },
+  ]}
+/>
+      <ServicesMarquee />
 
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
-          { label: service.title, href: `/services/${service.slug}` }
-        ]}
-      />
+      <WebsiteTypes items={toolData?.websiteTypes || []} />
 
-      <ServiceHero service={service} />
+      <ServicesToolStack service={slug} />
+      <DynamicSection data={extraData} />
 
-      <ServiceFeatures features={service.features} />
-
-      <SparkDigiServices />
-
+      {/* <WhyChoose data={whyChoose} /> */}
+      <GrowthStatsSection />
+      <ContactSection />
+      {/* <SparkDigiServices /> */}
+      {/* <Testimonials /> */}
+      {/* <ContactSection /> */}
     </main>
   );
 }

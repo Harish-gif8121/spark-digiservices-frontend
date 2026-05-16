@@ -9,6 +9,7 @@
   },
   {
     "label": "Services",
+    "href": "/services",
     "children": [
       {
         "label": "Logo Design",
@@ -43,12 +44,12 @@
         "href": "/services/trademark-registration"
       },
       {
-        "label": "Email Marketing",
-        "href": "/services/email-marketing"
-      },
-      {
         "label": "WhatsApp Marketing",
         "href": "/services/whatsapp-marketing"
+      },
+      {
+        "label": "Email Marketing",
+        "href": "/services/email-marketing"
       }
  
     ]
@@ -56,5 +57,10 @@
   {
     "label": "Contact",
     "href": "/contact"
+  },
+  {
+    "label": "Blogs",
+    "href": "/blogs"
+
   }
 ]

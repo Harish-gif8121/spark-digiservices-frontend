@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import {
   FaBuilding,
   FaHeartbeat,
@@ -5,83 +8,197 @@ import {
   FaStore,
   FaPaintBrush,
   FaTruck,
-  FaGraduationCap
+  FaGraduationCap,
+  FaUniversity,
 } from "react-icons/fa";
 
-export default function IndustriesSection({ data }) {
-  const industries = data?.industries || data ;
+export default function IndustriesSection() {
+  const industries = {
+    title: "INDUSTRIES WE SERVE",
+    subtitle: "MENTION YOUR SLIDE SUBTITLE HERE TO PROVIDE ADDITIONAL CONTEXT",
+    items: [
+      {
+        name: "Agriculture",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "building",
+      },
+      {
+        name: "Automobile",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "truck",
+      },
+      {
+        name: "Finance",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "finance",
+      },
+      {
+        name: "Healthcare",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "health",
+      },
+      {
+        name: "Retail",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "store",
+      },
+      {
+        name: "Education",
+        description:
+          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+        icon: "education",
+      },
+    ],
+  };
 
   const iconMap = {
-    building: <FaBuilding size={26} />,
-    health: <FaHeartbeat size={26} />,
-    cart: <FaShoppingCart size={26} />,
-    store: <FaStore size={26} />,
-    design: <FaPaintBrush size={26} />,
-    truck: <FaTruck size={26} />,
-    education: <FaGraduationCap size={26} />
+    building: <FaBuilding size={24} />,
+    health: <FaHeartbeat size={24} />,
+    cart: <FaShoppingCart size={24} />,
+    store: <FaStore size={24} />,
+    design: <FaPaintBrush size={24} />,
+    truck: <FaTruck size={24} />,
+    education: <FaGraduationCap size={24} />,
+    finance: <FaUniversity size={24} />,
+  };
+
+  const itemsList = industries.items;
+  const total = itemsList.length;
+  const [active, setActive] = useState(2); // center card index
+
+  // Responsive: detect if desktop (>= 1024px) to show 5 cards, else 3 cards
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Auto rotate every 2 seconds (was 3s → faster)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % total);
+    }, 1500); // ⬅️ speed increased
+    return () => clearInterval(interval);
+  }, [total]);
+
+  // Position mapping (circular)
+  const getPosition = (index) => {
+    let diff = index - active;
+    const half = total / 2;
+    if (diff > half) diff -= total;
+    if (diff < -half) diff += total;
+
+    if (isDesktop) {
+      // 5-card layout: show diff -2 .. 2
+      if (diff === 0) return "center";
+      if (diff === -1) return "left";
+      if (diff === 1) return "right";
+      if (diff === -2) return "farLeft";
+      if (diff === 2) return "farRight";
+      return "hidden";
+    } else {
+      // 3-card layout: only diff -1, 0, 1
+      if (diff === 0) return "center";
+      if (diff === -1) return "left";
+      if (diff === 1) return "right";
+      return "hidden";
+    }
+  };
+
+  const getStyles = (pos) => {
+    if (isDesktop) {
+      // Desktop: increased horizontal gaps to avoid merging
+      switch (pos) {
+        case "center":
+          return "z-30 translate-x-0 border-[10px] border-[#0f6f78] w-[270px] h-[190px]";
+        case "left":
+          return "z-20 -translate-x-[310px] border-[8px] border-[#b07a7a] w-[270px] h-[190px]"; // was -250
+        case "right":
+          return "z-20 translate-x-[310px] border-[8px] border-[#d96b6b] w-[270px] h-[190px]";  // was +250
+        case "farLeft":
+          return "z-10 -translate-x-[620px] opacity-60 w-[270px] h-[190px]"; // was -500
+        case "farRight":
+          return "z-10 translate-x-[620px] opacity-60 w-[270px] h-[190px]";  // was +500
+        default:
+          return "hidden";
+      }
+    } else {
+      // Mobile/tablet: also increased gaps
+      switch (pos) {
+        case "center":
+          return "z-30 translate-x-0 border-[8px] border-[#0f6f78] w-[230px] h-[170px]";
+        case "left":
+          return "z-20 -translate-x-[260px] border-[6px] border-[#b07a7a] w-[230px] h-[170px]"; // was -210
+        case "right":
+          return "z-20 translate-x-[260px] border-[6px] border-[#d96b6b] w-[230px] h-[170px]";  // was +210
+        default:
+          return "hidden";
+      }
+    }
   };
 
   return (
-    <section className="bg-white py-16 px-4">
-      <div className="max-w-7xl mx-auto text-center">
-
-        {/* Tag */}
-        <p className="text-[#e94c89] font-semibold mb-2 tracking-wide">
-          {industries.tag}
-        </p>
-
-        {/* Title */}
-        <h2 className="text-4xl font-bold text-gray-900 mb-3">
-          {industries.title.split(" ")[0]}{" "}
-          <span className="text-[#e94c89]">
-            {industries.title.split(" ")[1]}
-          </span>
-        </h2>
-
-        {/* Subtitle */}
-        <p className="text-gray-500 max-w-2xl mx-auto mb-12">
-          {industries.subtitle}
-        </p>
-
-        {/* Cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {industries.items.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-6 border border-gray-200 
-              shadow-sm hover:shadow-lg hover:-translate-y-1 
-              transition duration-300 group"
-            >
-
-              {/* Icon */}
-              <div className="w-14 h-14 mx-auto mb-5 flex items-center justify-center 
-              bg-pink-50 rounded-xl text-[#e94c89]
-              group-hover:bg-[#e94c89] group-hover:text-white transition">
-                {iconMap[item.icon]}
-              </div>
-
-              {/* Title */}
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                {item.name}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-500 text-sm mb-5">
-                {item.description}
-              </p>
-
-              {/* Button */}
-              <button
-                className="px-5 py-2 rounded-lg bg-pink-50 text-[#e94c89] font-medium
-                hover:bg-[#e94c89] hover:text-white transition duration-300"
-              >
-                Learn More
-              </button>
-
-            </div>
-          ))}
+    <section className="bg-white py-16 px-4 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        {/* Headings - larger text as requested */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-3xl font-extrabold text-gray-800 tracking-tight">
+            {industries.title}
+          </h2>
+          <p className="text-gray-400 text-sm md:text-base uppercase tracking-wider mt-4">
+            {industries.subtitle}
+          </p>
         </div>
 
+        {/* Carousel container */}
+        <div className="relative flex justify-center items-center h-[440px] md:h-[360px] w-full overflow-hidden">
+          {itemsList.map((item, index) => {
+            const pos = getPosition(index);
+            if (pos === "hidden") return null;
+
+            return (
+              <div
+                key={index}
+                className={`
+                  absolute transition-all duration-500 ease-in-out
+                  bg-white rounded-xl p-5 flex flex-col justify-center items-center shadow-md
+
+                  w-[260px] h-[240px] 
+                  md:w-[300px] md:h-[260px] 
+                  lg:w-[320px] lg:h-[280px]
+
+                  ${getStyles(pos)}
+                `}
+              >
+                <h3
+                  className={`font-bold text-lg md:text-2xl mb-2 text-center ${
+                    pos === "center" ? "text-[#0f6f78]" : "text-gray-700"
+                  }`}
+                >
+                  {item.name}
+                </h3>
+
+                <p className="text-gray-500 text-xs md:text-sm mb-3 text-center px-1">
+                  {item.description}
+                </p>
+
+                <div className="text-gray-500 text-xl md:text-2xl">
+                  {iconMap[item.icon]}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

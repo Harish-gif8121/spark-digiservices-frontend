@@ -105,19 +105,6 @@
     ]
   },
   {
-    "slug": "email-marketing",
-    "title": "Email Marketing",
-    "description": "Email campaign management services",
-    "heroTitle": "Email Marketing",
-    "heroDescription": "Engage customers and boost sales with targeted email campaigns.",
-    "features": [
-      "Email Campaign Setup",
-      "Automated Email Sequences",
-      "List Segmentation",
-      "Performance Tracking"
-    ]
-  },
-  {
     "slug": "whatsapp-marketing",
     "title": "WhatsApp Marketing",
     "description": "WhatsApp promotional marketing services",
@@ -128,6 +115,19 @@
       "Automated Responses",
       "Broadcast Campaigns",
       "Lead Engagement Tracking"
+    ]
+  },
+  {
+    "slug": "email-marketing",
+    "title": "Email Marketing",
+    "description": "Email marketing campaign management",
+    "heroTitle": "Email Marketing",
+    "heroDescription": "Create and manage effective email campaigns to nurture leads and boost sales.",
+    "features": [
+      "Email List Building",
+      "Custom Email Templates",
+      "Automated Campaigns",
+      "Performance Analytics"
     ]
   }
 ]
