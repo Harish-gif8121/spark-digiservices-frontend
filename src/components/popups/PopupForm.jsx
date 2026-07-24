@@ -11,6 +11,9 @@ export default function PopupForm({ open, onClose, source, data }) {
   const [mounted, setMounted] = useState(false);
   const [errors, setErrors] = useState({});
   const router = useRouter();
+
+
+  
   const title = data?.title || "Get Your Free Quote";
 
   useEffect(() => setMounted(true), []);
@@ -126,7 +129,7 @@ export default function PopupForm({ open, onClose, source, data }) {
           phone_number: data.phone,
         }),
       });
-
+//  data=response.json();
       if (!res.ok) throw new Error();
 
       toast.success("Form Submitted successfully!", { id: toastId });

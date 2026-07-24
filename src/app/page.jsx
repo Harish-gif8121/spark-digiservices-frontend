@@ -1,5 +1,6 @@
 import React from 'react'
 import Banner from '@/components/sections/banner'
+
 import site from "@/data/site.json";
 import "../styles/global.css";
 import ServicesMarquee from '@/components/sections/ServicesMarquee'
