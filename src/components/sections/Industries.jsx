@@ -14,45 +14,43 @@ import {
 
 export default function IndustriesSection() {
   const industries = {
-    title: "INDUSTRIES WE SERVE",
-    subtitle: "MENTION YOUR SLIDE SUBTITLE HERE TO PROVIDE ADDITIONAL CONTEXT",
+    title: "Expertise Across Industries",
+    subtitle: "Modern solutions for modern businesses.",
     items: [
-      {
-        name: "Agriculture",
-        description:
-          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
-        icon: "building",
-      },
-      {
-        name: "Automobile",
-        description:
-          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
-        icon: "truck",
-      },
       {
         name: "Finance",
         description:
-          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
-        icon: "finance",
+          "Secure solutions for smarter financial services.",
+        icon: "building",
       },
       {
         name: "Healthcare",
         description:
-          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
-        icon: "health",
+          " Enhancing care through digital innovation.",
+        icon: "truck",
       },
       {
         name: "Retail",
         description:
-          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+          "Creating seamless and engaging shopping experiences.",
         icon: "store",
       },
       {
-        name: "Education",
+        name: "Automobile",
         description:
-          "Lorem ipsum dolor sit adipiscing elit sed do tempor incidid ut.",
+          "Driving innovation across the mobility ecosystem.",
+        icon: "cart",
+      },
+      {
+        name: "Education",
+        description:" Empowering modern learning experiences.",
         icon: "education",
       },
+      {
+        name:"Agriculture",
+        description:"Advancing farming with smart technology.",
+        icon:"design",
+      } 
     ],
   };
 

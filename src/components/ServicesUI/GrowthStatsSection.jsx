@@ -1,8 +1,7 @@
 // components/sections/GrowthStatsSection.jsx
 
 import Image from "next/image";
-import Counter from "../ui/counter";
-// import Counter from "@/components/ui/Counter";
+import Counter from "../../components/ui/counter";
 
 export default function GrowthStatsSection() {
   return (

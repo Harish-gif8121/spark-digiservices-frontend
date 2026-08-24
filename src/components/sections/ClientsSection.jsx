@@ -4,7 +4,7 @@ export default function ClientsSection() {
   const data = {
     title: "Our Clients",
     subtitle:
-      "We are proud to work with these amazing brands, delivering innovative solutions and driving growth across industries.",
+      "Every brand here represents a partnership built on trust, collaboration, and shared success.",
     clients: [
       { name: "Anuhar Homes", logo: "/clients/anuhar.png" },
       { name: "Creya", logo: "/clients/creya.png" },

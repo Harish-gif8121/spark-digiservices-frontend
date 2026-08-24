@@ -21,85 +21,74 @@ const services = [
   {
     title: "Logo Design",
     icon: PenTool,
-    desc: "Build a powerful brand identity that stands out instantly.",
+    desc: "Craft a unique and memorable logo that reflects your brand’s personality and vision. We design identities that make your business instantly recognizable and professionally stand out.",
     href: "/services/logo-design",
     points: ["Custom brand identity", "Modern styles", "High-resolution files"],
   },
-    {
+  {
     title: "Trademark",
     icon: ShieldCheck,
-    desc: "Protect your brand legally.",
+    desc: "Secure your brand identity with complete legal trademark protection services. We help you safeguard your business name, logo, and assets from unauthorized use.",
     href: "/services/trademark",
     points: ["Filing", "Approval", "Support"],
   },
-    {
+  {
     title: "Web Development",
     icon: Monitor,
-    desc: "Modern fast websites.",
+    desc: "Build fast, responsive, and modern websites tailored to your business goals. Our websites are designed to deliver performance, scalability, and a seamless user experience.",
     href: "/services/website-development",
     points: ["Responsive", "SEO ready", "Fast"],
   },
-    {
+  {
     title: "App Development",
     icon: Smartphone,
-    desc: "Android & iOS apps.",
+    desc: "Create powerful Android and iOS applications that engage users and drive growth. We develop smooth, feature-rich apps built for performance and real-world usability.",
     href: "/services/app-development",
     points: ["Mobile UI", "Secure", "Scalable"],
   },
   {
     title: "SEO",
     icon: Search,
-    desc: "Rank higher and drive organic traffic.",
+    desc: "Improve your website visibility and rank higher on search engines organically. Our SEO strategies help you attract the right audience and increase consistent traffic.",
     href: "/services/seo",
     points: ["Keyword research", "On-page SEO", "Technical fixes"],
   },
-   {
+  {
     title: "Local SEO",
     icon: Globe,
-    desc: "Reach nearby customers.",
+    desc: "Connect with nearby customers who are actively searching for your services. We optimize your online presence to boost visibility in local search results and maps.",
     href: "/services/local-seo",
     points: ["GMB setup", "Maps ranking", "Local leads"],
   },
   {
     title: "Social Media",
     icon: Share2,
-    desc: "Grow your audience and engagement.",
+    desc: "Build a strong online presence and connect meaningfully with your audience. We create engaging content and strategies that grow followers and increase engagement.",
     href: "/services/social-media",
     points: ["Content strategy", "Daily posting", "Analytics"],
   },
   {
     title: "Google Ads",
     icon: BarChart3,
-    desc: "Run high ROI campaigns.",
+    desc: "Run highly targeted ad campaigns that bring instant traffic and conversions. We optimize your ads for maximum ROI and better lead generation.",
     href: "/services/google-ads",
     points: ["Targeting", "Optimization", "Tracking"],
   },
-
-
-  // {
-  //   title: "App Development",
-  //   icon: Smartphone,
-  //   desc: "Android & iOS apps.",
-  //   href: "/services/app-development",
-  //   points: ["Mobile UI", "Secure", "Scalable"],
-  // },
-
   {
     title: "Email Marketing",
     icon: Mail,
-    desc: "Convert leads effectively.",
+    desc: "Turn leads into loyal customers through personalized email campaigns. We design impactful emails that improve engagement, trust, and conversions.",
     href: "/services/email-marketing",
     points: ["Automation", "Campaigns", "Conversion"],
   },
   {
     title: "WhatsApp Marketing",
     icon: MessageCircle,
-    desc: "Direct customer reach.",
+    desc: "Reach your customers instantly with direct and personalized messaging campaigns. We help you boost sales and engagement through high-response WhatsApp communication.",
     href: "/services/whatsapp-marketing",
     points: ["Bulk messaging", "Automation", "Engagement"],
   },
 ];
-
 const button = {
   title: "Get our services",
 };
@@ -117,13 +106,12 @@ export default function ServicesSection() {
             </div>
 
             <h2 className="text-4xl font-bold text-gray-900">
-              Interactive Digital{" "}
-              <span className="text-blue-600">Solutions</span>
+              Designed to Help Your  {" "}
+              <span className="text-blue-600">Business Grow</span>
             </h2>
 
             <p className="text-gray-500 mt-4">
-              Transform your business with cutting-edge strategies and creative
-              excellence.
+              Elevate your brand. Expand your reach. Accelerate your growth. 
             </p>
           </div>
 

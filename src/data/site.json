@@ -1,8 +1,8 @@
 {
   "name": "Digital Marketing Agency",
-  "description": "We help businesses grow with SEO, Ads, and Social Media Marketing.",
-  "tagline": "No 1 Digital Marketing Agency in Hyderabad",
-  "highlight": "Digital Marketing Services",
+  "description": "Empowering businesses to grow online with strategies that deliver real results.",
+  "tagline":"Build a Brand People Remember ",
+  
   "phone": "012-345-6789",
 
   "testimonials": {
@@ -71,41 +71,41 @@
     ]
   },
    "contact": {
-    "tagline": "LET'S COLLABORATE",
+    "tagline": "LET'S CONNECT",
     "title": "LET'S WORK TOGETHER",
     "phone": "+91 6300296581",
     "email": "info@Sparkdigi Services.com",
-    "description": "Sparkdigi Services is a full-service digital agency specializing in innovative solutions for web and app development, digital marketing, branding, and more.",
+    "description":"SparkDigi Services is a modern digital agency transforming ideas into impactful websites, apps,marketing campaigns, branding, and more. ",
     "mapEmbed": "https://www.google.com/maps?q=Hyderabad&output=embed"
   },
 
 
   "whyChoose": {
-  "tag": "WHY CHOOSE US",
-  "title": "Why brands trust",
-  "highlight": "Sparkdigi Services",
-  "subtitle": "ROI-focused, data-driven, transparent, and fully supported marketing strategies.",
+  "tag": "WHY WE WIN",
+  "title": "What Makes",
+  "highlight": "Sparkdigi Different",
+  "subtitle": "Sparkdigi is a Digital Marketing Company focused on helping brands grow through smart strategy and measurable results. Our commitment to performance and transparency has helped position us among the Best Digital Marketing Companies trusted by ambitious businesses.",
   "image": "/choose.webp",
   "items": [
     {
       "number": "01",
       "title": "ROI Focused",
-      "description": "Every campaign is optimized to maximize return on investment and business growth."
+      "description": "We don't chase clicks alone—we focus on results that contribute to real business growth."
     },
     {
       "number": "02",
       "title": "Data-Driven Strategy",
-      "description": "We use real analytics and insights to make smarter marketing decisions."
+      "description": "Every strategy is shaped by data, ensuring decisions are based on facts, not assumptions."
     },
     {
       "number": "03",
       "title": "Full Transparency",
-      "description": "Clear reporting, honest communication, and no hidden tactics."
+      "description": "You'll always know what we're doing, why we're doing it, and how it's performing."
     },
     {
       "number": "04",
       "title": "Dedicated Support",
-      "description": "Our team is always available to support, optimize, and scale your campaigns."
+      "description": "Think of us as an extension of your team, always ready to support your next move."
     }
   ]
 },

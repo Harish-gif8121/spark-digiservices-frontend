@@ -1,43 +1,45 @@
 export const toolStack = {
   "website-development": {
-    websiteTypes: [
-      {
-        title: "Business Websites",
-        description:
-          "A well-designed business website is the foundation of your brand’s online presence.",
-        icon: "💼",
-      },
-      {
-        title: "E-Commerce Websites",
-        description:
-          "E-commerce websites enable businesses to sell products or services online.",
-        icon: "🛒",
-      },
-      {
-        title: "Educational Websites",
-        description:
-          "Educational websites are designed for e-learning platforms.",
-        icon: "📘",
-      },
-      {
-        title: "Landing Pages",
-        description:
-          "Landing pages are conversion-focused pages built to capture leads.",
-        icon: "📄",
-      },
-      {
-        title: "Entertainment Websites",
-        description: "Entertainment websites provide engaging content.",
-        icon: "🎬",
-      },
-      {
-        title: "News or Magazine Websites",
-        description: "News websites deliver timely updates and articles.",
-        icon: "📰",
-      },
-    ],
-    analytics: [
-  // Backend
+   websiteTypes: [
+  {
+    title: "Business Websites",
+    description:
+      "Professional business websites that build credibility, attract customers, and strengthen your online presence.",
+    icon: "💼",
+  },
+  {
+    title: "E-Commerce Websites",
+    description:
+      "Scalable online stores with secure payment integration and seamless shopping experiences.",
+    icon: "🛒",
+  },
+  {
+    title: "Educational Websites",
+    description:
+      "Interactive educational websites designed for institutes, online learning, and student engagement.",
+    icon: "📘",
+  },
+  {
+    title: "Landing Pages",
+    description:
+      "High-converting landing pages created to generate quality leads and improve marketing campaigns.",
+    icon: "📄",
+  },
+  {
+    title: "Portfolio Websites",
+    description:
+      "Creative portfolio websites that showcase your work, skills, and professional achievements.",
+    icon: "🎨",
+  },
+  {
+    title: "News & Magazine Websites",
+    description:
+      "SEO-friendly news and magazine websites built for engaging content and better online visibility.",
+    icon: "📰",
+  },
+],
+   analytics: [
+  // Development Technologies
   {
     name: "Node.js",
     icon: "https://cdn.simpleicons.org/nodedotjs",
@@ -54,8 +56,6 @@ export const toolStack = {
     name: "Laravel",
     icon: "https://cdn.simpleicons.org/laravel",
   },
-
-  // CMS
   {
     name: "WordPress",
     icon: "https://cdn.simpleicons.org/wordpress",
@@ -68,8 +68,6 @@ export const toolStack = {
     name: "Webflow",
     icon: "https://cdn.simpleicons.org/webflow",
   },
-
-  // Hosting
   {
     name: "Vercel",
     icon: "https://cdn.simpleicons.org/vercel",
@@ -86,8 +84,6 @@ export const toolStack = {
     name: "Firebase",
     icon: "https://cdn.simpleicons.org/firebase",
   },
-
-  // Database
   {
     name: "MongoDB",
     icon: "https://cdn.simpleicons.org/mongodb",
@@ -100,8 +96,6 @@ export const toolStack = {
     name: "PostgreSQL",
     icon: "https://cdn.simpleicons.org/postgresql",
   },
-
-  // Performance
   {
     name: "Google Lighthouse",
     icon: "https://cdn.simpleicons.org/googlechrome",
@@ -115,7 +109,9 @@ export const toolStack = {
     icon: "https://cdn.simpleicons.org/googlechrome",
   },
 ],
-   strategy: [
+
+strategy: [
+  // Development Workflow
   {
     name: "VS Code",
     icon: "https://cdn.simpleicons.org/visualstudiocode",
@@ -134,7 +130,8 @@ export const toolStack = {
   },
 ],
 
-   content: [
+content: [
+  // Design Tools
   {
     name: "Figma",
     icon: "https://cdn.simpleicons.org/figma",
@@ -153,7 +150,8 @@ export const toolStack = {
   },
 ],
 
-   ads: [
+ads: [
+  // Frontend Technologies
   {
     name: "React.js",
     icon: "https://cdn.simpleicons.org/react",
@@ -439,61 +437,67 @@ export const toolStack = {
     ],
   },
 
-  "seo": {
-    websiteTypes: [
-      {
-        title: "On-Page SEO",
-        description:
-          "We optimize website elements like meta tags, headings, content, URLs, and internal linking to improve search engine visibility and user experience.",
-        icon: "📝",
-      },
-      {
-        title: "Link Building SEO",
-        description:
-          "We build high-quality backlinks from authoritative websites to improve your domain authority, credibility, and search engine rankings.",
-        icon: "🔗",
-      },
-      {
-        title: "Technical SEO",
-        description:
-          "We enhance your website’s technical structure, including site speed, mobile-friendliness, crawlability, indexing, and schema markup for better performance in search engines.",
-        icon: "⚙️",
-      },
-      {
-        title: "AEO (Answer Engine Optimization)",
-        description:
-          "We optimize your content to appear in featured snippets, FAQs, and direct answers on search engines and AI platforms, increasing visibility in zero-click searches.",
-        icon: "💡",
-      },
-      {
-        title: "GEO (Generative Engine Optimization)",
-        description:
-          "We optimize your content for AI-driven search engines and generative platforms to ensure your brand is discoverable in AI-generated responses and recommendations.",
-        icon: "🤖",
-      },
-      {
-        title: "Voice Search Optimization",
-        description:
-          "We tailor your content for voice-based queries by focusing on conversational keywords and local intent, helping your business rank in voice search results.",
-        icon: "🎤",
-      },
-      {
-        title: "E-commerce SEO",
-        description:
-          "We optimize product pages, category structures, and user experience to increase visibility, traffic, and conversions for your online store.",
-        icon: "🛒",
-      },
-      {
-        title: "App Store Optimization (ASO)",
-        description:
-          "We optimize your mobile app listings with the right keywords, visuals, and descriptions to improve rankings, downloads, and visibility in app stores.",
-        icon: "📱",
-      },
-    ],
- 
+"seo": {
+  websiteTypes: [
+    {
+      title: "On-Page SEO",
+      description:
+        "Transform every webpage into a ranking powerhouse with optimized content, strategic keywords, compelling meta tags, structured headings, clean URLs, internal linking, image optimization, schema markup, and Core Web Vitals improvements that boost visibility, user experience, and organic growth.",
+      icon: "📝",
+    },
+    {
+      title: "Authority Building & Digital PR",
+      description:
+        "Strengthen online authority through high-quality backlinks, digital PR, brand mentions, and trusted citations. Build a credible digital presence that improves search rankings and drives long-term trust.",
+      icon: "🔗",
+    },
+    {
+      title: "Technical SEO",
+      description:
+        "Create a search-engine-friendly website with advanced technical optimization, including faster site speed, enhanced mobile performance, improved crawlability, accurate indexing, structured data, XML sitemaps, and a healthier website architecture.",
+      icon: "⚙️",
+    },
+    {
+      title: "Local SEO",
+      description:
+        "Reach nearby customers with optimized Google Business Profile management, local citations, location pages, customer reviews, and geo-targeted keyword strategies that increase local visibility and generate qualified leads.",
+      icon: "📍",
+    },
+    {
+      title: "Content SEO",
+      description:
+        "Develop search-focused content that both users and search engines value. Intent-driven, keyword-rich, EEAT-focused content attracts organic traffic, answers user questions, and strengthens search performance.",
+      icon: "✍️",
+    },
+    {
+      title: "E-commerce SEO",
+      description:
+        "Convert product searches into sales with optimized product pages, category structures, product schema, image optimization, and high-intent shopping keywords that increase visibility, traffic, and conversions.",
+      icon: "🛒",
+    },
+    {
+      title: "AEO (Answer Engine Optimization)",
+      description:
+        "Earn visibility where answers matter most through optimization for featured snippets, FAQs, AI Overviews, and conversational search, helping content perform across modern answer engines.",
+      icon: "💡",
+    },
+    {
+      title: "GEO (Generative Engine Optimization)",
+      description:
+        "Future-proof online visibility with AI-ready optimization. Structured content, entity optimization, schema markup, and authority signals help brands appear in AI platforms such as ChatGPT, Gemini, Copilot, and Perplexity.",
+      icon: "🤖",
+    },
+    {
+      title: "App Store Optimization (ASO)",
+      description:
+        "Increase app visibility through optimized titles, keywords, descriptions, visuals, and ratings that improve rankings, drive more downloads, and maximize user engagement.",
+      icon: "📱",
+    },
+  ],
+
   technicalSeo: [
     {
-      name: "Screaming Frog",
+      name: "Screaming Frog SEO Spider",
       icon: "https://digitali360.com/public/images/screamingfrog.png",
     },
     {
@@ -506,10 +510,10 @@ export const toolStack = {
     },
     {
       name: "GTmetrix",
-      icon: "https://digitali360.com/public/images/gtmetrix.png ",
+      icon: "https://digitali360.com/public/images/gtmetrix.png",
     },
     {
-      name: "DeepCrawl (Lumar)",
+      name: "Lumar (DeepCrawl)",
       icon: "https://digitali360.com/public/images/deepcrawl.png",
     },
     {
@@ -517,44 +521,24 @@ export const toolStack = {
       icon: "https://digitali360.com/public/images/ahrefs.png",
     },
     {
-      name: "SEMrush Site Audit",
+      name: "Semrush Site Audit",
       icon: "https://cdn.simpleicons.org/semrush",
+    },
+    {
+      name: "Google Search Console",
+      icon: "https://cdn.simpleicons.org/googlesearchconsole",
     },
     {
       name: "Bing Webmaster Tools",
       icon: "https://cdn.simpleicons.org/microsoftbing",
     },
     {
-      name: "Cloudflare",
-      icon: "https://cdn.simpleicons.org/cloudflare",
-    },
-    {
-      name: "WebPageTest",
-      icon: "https://cdn.simpleicons.org/webpagetest",
+      name: "JetOctopus",
+      icon: "https://cdn.simpleicons.org/jetoctopus",
     },
   ],
 
   ecommerceSeo: [
-    {
-      name: "SEMrush",
-      icon: "https://cdn.simpleicons.org/semrush",
-    },
-    {
-      name: "Ahrefs",
-      icon: "https://cdn.simpleicons.org/ahrefs",
-    },
-    {
-      name: "Google Merchant Center",
-      icon: "https://cdn.simpleicons.org/google",
-    },
-    {
-      name: "Ubersuggest",
-      icon: "https://cdn.simpleicons.org/neilpatel",
-    },
-    {
-      name: "DataFeedWatch",
-      icon: "https://cdn.simpleicons.org/datafeedwatch",
-    },
     {
       name: "Shopify SEO Apps",
       icon: "https://cdn.simpleicons.org/shopify",
@@ -564,8 +548,28 @@ export const toolStack = {
       icon: "https://cdn.simpleicons.org/woocommerce",
     },
     {
-      name: "Amazon SEO Tools",
-      icon: "https://cdn.simpleicons.org/amazon",
+      name: "Google Merchant Center",
+      icon: "https://cdn.simpleicons.org/google",
+    },
+    {
+      name: "Semrush",
+      icon: "https://cdn.simpleicons.org/semrush",
+    },
+    {
+      name: "Ahrefs",
+      icon: "https://cdn.simpleicons.org/ahrefs",
+    },
+    {
+      name: "Screaming Frog SEO Spider",
+      icon: "https://digitali360.com/public/images/screamingfrog.png",
+    },
+    {
+      name: "Google Search Console",
+      icon: "https://cdn.simpleicons.org/googlesearchconsole",
+    },
+    {
+      name: "DataFeedWatch",
+      icon: "https://cdn.simpleicons.org/datafeedwatch",
     },
   ],
 
@@ -575,8 +579,24 @@ export const toolStack = {
       icon: "https://cdn.simpleicons.org/grammarly",
     },
     {
-      name: "Canva",
-      icon: "https://cdn.simpleicons.org/canva",
+      name: "Surfer SEO",
+      icon: "https://cdn.simpleicons.org/surfer",
+    },
+    {
+      name: "Semrush Content Toolkit",
+      icon: "https://cdn.simpleicons.org/semrush",
+    },
+    {
+      name: "Clearscope",
+      icon: "https://cdn.simpleicons.org/clearscope",
+    },
+    {
+      name: "Frase",
+      icon: "https://cdn.simpleicons.org/frase",
+    },
+    {
+      name: "MarketMuse",
+      icon: "https://cdn.simpleicons.org/marketmuse",
     },
     {
       name: "BuzzSumo",
@@ -587,233 +607,255 @@ export const toolStack = {
       icon: "https://cdn.simpleicons.org/answerthepublic",
     },
     {
-      name: "SEMrush Content Analyzer",
-      icon: "https://cdn.simpleicons.org/semrush",
+      name: "Canva",
+      icon: "https://cdn.simpleicons.org/canva",
     },
     {
-      name: "Surfer SEO",
-      icon: "https://cdn.simpleicons.org/surfer",
-    },
-    {
-      name: "CoSchedule",
-      icon: "https://cdn.simpleicons.org/coschedule",
-    },
-    {
-      name: "Trello",
-      icon: "https://cdn.simpleicons.org/trello",
-    },
-    {
-      name: "Hemingway Editor",
-      icon: "https://cdn.simpleicons.org/readme",
-    },
-    {
-      name: "Clearscope",
-      icon: "https://cdn.simpleicons.org/clearscope",
+      name: "Jasper AI",
+      icon: "https://cdn.simpleicons.org/jasper",
     },
   ],
 
   analyticsTools: [
     {
-      name: "Google Analytics",
+      name: "Google Analytics 4 (GA4)",
       icon: "https://cdn.simpleicons.org/googleanalytics",
+    },
+    {
+      name: "Google Search Console",
+      icon: "https://cdn.simpleicons.org/googlesearchconsole",
+    },
+    {
+      name: "Looker Studio",
+      icon: "https://cdn.simpleicons.org/looker",
+    },
+    {
+      name: "Microsoft Clarity",
+      icon: "https://cdn.simpleicons.org/microsoft",
     },
     {
       name: "Hotjar",
       icon: "https://cdn.simpleicons.org/hotjar",
     },
     {
-      name: "Crazy Egg",
-      icon: "https://cdn.simpleicons.org/crazyegg",
-    },
-    {
-      name: "Matomo",
-      icon: "https://cdn.simpleicons.org/matomo",
-    },
-    {
-      name: "Clicky",
-      icon: "https://cdn.simpleicons.org/clicky",
-    },
-    {
-      name: "Adobe Analytics",
-      icon: "https://cdn.simpleicons.org/adobe",
-    },
-    {
       name: "Google Tag Manager",
       icon: "https://cdn.simpleicons.org/googletagmanager",
     },
     {
-      name: "Piwik PRO",
-      icon: "https://cdn.simpleicons.org/piwik",
+      name: "Semrush",
+      icon: "https://cdn.simpleicons.org/semrush",
     },
     {
-      name: "Databox",
-      icon: "https://cdn.simpleicons.org/databox",
+      name: "Ahrefs",
+      icon: "https://cdn.simpleicons.org/ahrefs",
     },
     {
-      name: "Looker Studio",
-      icon: "https://cdn.simpleicons.org/google",
+      name: "Matomo Analytics",
+      icon: "https://cdn.simpleicons.org/matomo",
+    },
+    {
+      name: "Mixpanel",
+      icon: "https://cdn.simpleicons.org/mixpanel",
+    },
+  ],
+},
+
+ "social-media-marketing": {
+  websiteTypes: [
+    {
+      title: "Social Media Strategy",
+      description:
+        "A tailored strategy that helps your brand reach the right audience, build meaningful connections, and achieve measurable business growth.",
+      icon: "📈",
+    },
+    {
+      title: "Content Marketing",
+      description:
+        "Creative content that reflects your brand's voice, captures attention, and keeps your audience engaged across every platform.",
+      icon: "✍️",
+    },
+    {
+      title: "Paid Social Advertising",
+      description:
+        "Targeted advertising campaigns designed to attract the right customers, generate quality leads, and maximize your marketing investment.",
+      icon: "🎯",
+    },
+    {
+      title: "Community Management",
+      description:
+        "Timely audience interactions that build trust, strengthen customer relationships, and create an active online community around your brand.",
+      icon: "💬",
+    },
+    {
+      title: "Influencer Marketing",
+      description:
+        "Authentic partnerships with trusted creators that expand your reach, increase brand credibility, and inspire customer confidence.",
+      icon: "🤝",
+    },
+    {
+      title: "Social Media Analytics",
+      description:
+        "Clear performance insights that help refine your strategy, improve engagement, and deliver better results with every campaign.",
+      icon: "📊",
+    },
+    {
+      title: "Brand Reputation Management",
+      description:
+        "Consistent monitoring and responsive communication that protect your brand image and build lasting customer trust.",
+      icon: "🛡️",
+    },
+    {
+      title: "Video & Reel Marketing",
+      description:
+        "Engaging short-form videos that showcase your brand, increase visibility, and encourage meaningful audience interaction.",
+      icon: "🎥",
     },
   ],
 
-  },
+  // ✅ Social Media Management Tools
+  strategyTools: [
+    {
+      name: "Meta Business Suite",
+      icon: "https://www.facebook.com/favicon.ico",
+    },
+    {
+      name: "Hootsuite",
+      icon: "https://cdn-icons-png.flaticon.com/512/5968/5968875.png",
+    },
+    {
+      name: "Buffer",
+      icon: "https://cdn-icons-png.flaticon.com/512/5968/5968878.png",
+    },
+    {
+      name: "Sprout Social",
+      icon: "https://cdn-icons-png.flaticon.com/512/5968/5968863.png",
+    },
+    {
+      name: "Later",
+      icon: "https://later.com/favicon.ico",
+    },
+    {
+      name: "SocialPilot",
+      icon: "https://www.socialpilot.co/favicon.ico",
+    },
+    {
+      name: "Agorapulse",
+      icon: "https://www.agorapulse.com/favicon.ico",
+    },
+    {
+      name: "Zoho Social",
+      icon: "https://www.zoho.com/favicon.ico",
+    },
+  ],
 
-  "social-media-marketing": {
-    websiteTypes: [
-      {
-        title: "Social Media Strategy Development",
-        description:
-          "We create a comprehensive social media strategy tailored to your business goals, target audience, and industry trends to maximize engagement and ROI.",
-        icon: "📈",
-      },
-      {
-        title: "Instagram Marketing",
-        description:
-          "We grow your brand on Instagram through content creation, reels, stories, and targeted campaigns to boost engagement and followers.",
-        icon: "📸",
-      },
-      {
-        title: "Facebook Marketing",
-        description:
-          "We manage and optimize Facebook campaigns, pages, and ads to increase brand awareness, generate leads, and drive conversions.",
-        icon: "👍",
-      },
-      {
-        title: "LinkedIn Marketing",
-        description:
-          "We help you build a strong professional presence on LinkedIn through content strategy, B2B lead generation, and brand positioning.",
-        icon: "💼",
-      },
-      {
-        title: "YouTube Marketing",
-        description:
-          "We optimize and promote your video content on YouTube to increase views, subscribers, and audience engagement.",
-        icon: "🎥",
-      },
-      {
-        title: "Pinterest Marketing",
-        description:
-          "We create and optimize pins, boards, and campaigns to drive traffic and visibility for your brand on Pinterest.",
-        icon: "📌",
-      },
-      {
-        title: "X (Twitter) Marketing",
-        description:
-          "We manage your presence on X (Twitter) with engaging posts, trends, and campaigns to boost brand visibility and audience interaction.",
-        icon: "🐦",
-      },
-    ],
+  // ✅ Content & Design Tools
+  contentTools: [
+    {
+      name: "Canva",
+      icon: "https://www.canva.com/favicon.ico",
+    },
+    {
+      name: "Adobe Express",
+      icon: "https://www.adobe.com/favicon.ico",
+    },
+    {
+      name: "Adobe Photoshop",
+      icon: "https://cdn-icons-png.flaticon.com/512/5968/5968520.png",
+    },
+    {
+      name: "Adobe Illustrator",
+      icon: "https://cdn-icons-png.flaticon.com/512/5968/5968472.png",
+    },
+    {
+      name: "Figma",
+      icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png",
+    },
+    {
+      name: "CapCut",
+      icon: "https://www.capcut.com/favicon.ico",
+    },
+    {
+      name: "ChatGPT",
+      icon: "https://chatgpt.com/favicon.ico",
+    },
+    {
+      name: "Grammarly",
+      icon: "https://www.grammarly.com/favicon.ico",
+    },
+  ],
 
-    // ✅ Social Media Strategy Tools
-    strategyTools: [
-      {
-        name: "Hootsuite",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968875.png",
-      },
-      {
-        name: "Buffer",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968878.png",
-      },
-      {
-        name: "Sprout Social",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968863.png",
-      },
-      {
-        name: "Trello",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968853.png",
-      },
-      {
-        name: "CoSchedule",
-        icon: "https://digitali360.com/public/images/coschedule.png",
-      },
-      {
-        name: "Asana",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968879.png",
-      },
-      {
-        name: "Monday.com",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968898.png",
-      },
-      {
-        name: "Planable",
-        icon: "https://digitali360.com/public/images/planable.png",
-      },
-      { name: "MeetEdgar", icon: "https://digitali360.com/public/images/meetedgar.png" },
-      { name: "Loomly", icon: "https://www.loomly.com/favicon.ico" },
-    ],
+  // ✅ Analytics & Reporting Tools
+  analyticsTools: [
+    {
+      name: "Google Analytics 4 (GA4)",
+      icon: "https://www.google.com/favicon.ico",
+    },
+    {
+      name: "Looker Studio",
+      icon: "https://lookerstudio.google.com/favicon.ico",
+    },
+    {
+      name: "Meta Insights",
+      icon: "https://www.facebook.com/favicon.ico",
+    },
+    {
+      name: "LinkedIn Analytics",
+      icon: "https://www.linkedin.com/favicon.ico",
+    },
+    {
+      name: "YouTube Analytics",
+      icon: "https://www.youtube.com/favicon.ico",
+    },
+    {
+      name: "Brand24",
+      icon: "https://brand24.com/favicon.ico",
+    },
+    {
+      name: "Social Blade",
+      icon: "https://socialblade.com/favicon.ico",
+    },
+    {
+      name: "Metricool",
+      icon: "https://metricool.com/favicon.ico",
+    },
+  ],
 
-    // ✅ Content Creation Tools
-    contentTools: [
-      {
-        name: "Adobe Photoshop",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968520.png",
-      },
-      {
-        name: "Adobe Illustrator",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968472.png",
-      },
-      {
-        name: "Adobe Premiere Pro",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968525.png",
-      },
-      {
-        name: "Adobe After Effects",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968514.png",
-      },
-    ],
-
-    // ✅ Paid Social Ads
-    adsTools: [
-      {
-        name: "Facebook Ads Manager",
-        icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
-      },
-      // { name: "Google Ads", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968342.png" },
-      {
-        name: "LinkedIn Campaign Manager",
-        icon: "https://cdn-icons-png.flaticon.com/512/3536/3536505.png",
-      },
-      {
-        name: "Twitter Ads",
-        icon: "https://cdn-icons-png.flaticon.com/512/733/733579.png",
-      },
-      {
-        name: "Pinterest Ads",
-        icon: "https://cdn-icons-png.flaticon.com/512/733/733558.png",
-      },
-    ],
-
-    // ✅ Analytics Tools
-    analyticsTools: [
-      {
-        name: "Google Analytics",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png",
-      },
-      {
-        name: "Hootsuite Analytics",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968875.png",
-      },
-      {
-        name: "Sprout Social Reports",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968863.png",
-      },
-      {
-        name: "Buffer Analytics",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968878.png",
-      },
-      {
-        name: "Socialbakers",
-        icon: "https://digitali360.com/public/images/social-bakers.png",
-      },
-      {
-        name: "Brandwatch",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968872.png",
-      },
-      { name: "Rival IQ", icon: "https://digitali360.com/public/images/rival.png" },
-      { name: "Quintly", icon: "https://www.quintly.com/favicon.ico" },
-      { name: "DashThis", icon: "https://dashthis.com/favicon.ico" },
-      { name: "Iconosquare", icon: "https://digitali360.com/public/images/iconosquare.png" },
-    ],
-  },
+  // ✅ Advertising & Performance Tools
+  adsTools: [
+    {
+      name: "Meta Ads Manager",
+      icon: "https://www.facebook.com/favicon.ico",
+    },
+    {
+      name: "Google Ads",
+      icon: "https://ads.google.com/favicon.ico",
+    },
+    {
+      name: "LinkedIn Campaign Manager",
+      icon: "https://www.linkedin.com/favicon.ico",
+    },
+    {
+      name: "TikTok Ads Manager",
+      icon: "https://www.tiktok.com/favicon.ico",
+    },
+    {
+      name: "Pinterest Ads",
+      icon: "https://www.pinterest.com/favicon.ico",
+    },
+    {
+      name: "Meta Pixel",
+      icon: "https://www.facebook.com/favicon.ico",
+    },
+    {
+      name: "Google Tag Manager",
+      icon: "https://tagmanager.google.com/favicon.ico",
+    },
+    {
+      name: "Google Merchant Center",
+      icon: "https://www.google.com/favicon.ico",
+    },
+  ],
+},
 
   "google-ads": {
     websiteTypes: [

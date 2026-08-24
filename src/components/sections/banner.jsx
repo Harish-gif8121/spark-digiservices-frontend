@@ -29,8 +29,9 @@ export default function HeroSection() {
           {/* Welcome Text */}
           <Animation direction="up" delay={200}>
             <p className="text-lg sm:text-xl mb-4">
-              Welcome to{" "}
+              Your Trusted{" "}
               <span className="text-[#e94c89] font-semibold">{site.name}</span>
+             {" "} partner
             </p>
           </Animation>
 
