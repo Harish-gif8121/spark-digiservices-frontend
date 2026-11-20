@@ -223,50 +223,26 @@ export default function PopupForm({
   // FORM SUBMIT
   // =========================================
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
 
-    // Prevent double submission
-    if (submitting) {
-      return;
-    }
+    if (submitting) return;
 
-    const form =
-      e.currentTarget;
+    const form = e.currentTarget;
 
     // =======================================
     // GET FORM DATA
     // =======================================
 
     const leadData = {
-      name:
-        form.name.value.trim(),
-
-      email:
-        form.email.value.trim(),
-
-      phone:
-        form.phone.value.trim(),
-
-      company:
-        form.company.value.trim(),
-
-      service:
-        form.service.value,
-
-      message:
-        form.message.value.trim(),
-
-      // IMPORTANT:
-      // Preserve your current source logic
-      source:
-        source || "unknown",
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      phone: form.phone.value.trim(),
+      company: form.company.value.trim(),
+      service: form.service.value,
+      message: form.message.value.trim(),
+      source: source || "unknown",
     };
-
-    console.log(
-      "Lead data:",
-      leadData
-    );
 
     // =======================================
     // VALIDATE ALL FIELDS
@@ -274,148 +250,52 @@ export default function PopupForm({
 
     const newErrors = {};
 
-    Object.keys(
-      leadData
-    ).forEach((key) => {
-      const error =
-        validateField(
-          key,
-          leadData[key]
-        );
-
-      if (error) {
-        newErrors[key] =
-          error;
-      }
+    Object.keys(leadData).forEach((key) => {
+      const error = validateField(key, leadData[key]);
+      if (error) newErrors[key] = error;
     });
 
-    setErrors(
-      newErrors
-    );
+    setErrors(newErrors);
 
-    // Stop if validation failed
-    if (
-      Object.keys(
-        newErrors
-      ).length > 0
-    ) {
-      toast.error(
-        "Fix errors before submitting"
-      );
-
+    if (Object.keys(newErrors).length > 0) {
+      toast.error("Fix errors before submitting");
       return;
     }
 
     // =======================================
-    // START SUBMISSION
+    // BUILD WHATSAPP MESSAGE
     // =======================================
 
-    setSubmitting(true);
+    const WHATSAPP_NUMBER = "917995508708"; // ← receiver number (change if needed)
 
-    const toastId =
-      toast.loading(
-        "Submitting..."
-      );
+    const text =
+      `🚨 *New Website Lead*\n\n` +
+      `👤 *Name:* ${leadData.name}\n` +
+      `📱 *Phone:* ${leadData.phone}\n` +
+      `📧 *Email:* ${leadData.email}\n` +
+      `🏢 *Company:* ${leadData.company || "Not provided"}\n` +
+      `🛠 *Service:* ${leadData.service || "Not selected"}\n` +
+      `💬 *Message:* ${leadData.message}\n\n` +
+      `🌐 *Source:* ${leadData.source}`;
 
-    try {
-      // =====================================
-      // SEND LEAD TO NEXT.JS API
-      // =====================================
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
-      const response =
-        await fetch(
-          "/api/whatsapp-lead",
-          {
-            method: "POST",
+    // =======================================
+    // OPEN WHATSAPP (new tab / app)
+    // =======================================
 
-            headers: {
-              "Content-Type":
-                "application/json",
-            },
+    window.open(waUrl, "_blank", "noopener,noreferrer");
 
-            body:
-              JSON.stringify(
-                leadData
-              ),
-          }
-        );
+    // =======================================
+    // SUCCESS UX
+    // =======================================
 
-      // =====================================
-      // READ API RESPONSE
-      // =====================================
+    toast.success("Opening WhatsApp — hit Send there to deliver your message.");
 
-      const result =
-        await response.json();
-
-      console.log(
-        "WhatsApp lead response:",
-        result
-      );
-
-      // =====================================
-      // CHECK RESPONSE
-      // =====================================
-
-      if (
-        !response.ok ||
-        !result.success
-      ) {
-        console.error(
-          "WhatsApp lead failed:",
-          result
-        );
-
-        throw new Error(
-          result.message ||
-            "Failed to send lead"
-        );
-      }
-
-      // =====================================
-      // SUCCESS
-      // =====================================
-
-      toast.success(
-        "Form submitted successfully!",
-        {
-          id: toastId,
-        }
-      );
-
-      // Reset form
-      form.reset();
-
-      // Clear errors
-      setErrors({});
-
-      // Close popup
-      onClose();
-
-      // Go to thank-you page
-      router.push(
-        "/thank-you"
-      );
-
-    } catch (error) {
-
-      console.error(
-        "Form submission error:",
-        error
-      );
-
-      toast.error(
-        error?.message ||
-          "Something went wrong. Please try again.",
-        {
-          id: toastId,
-        }
-      );
-
-    } finally {
-
-      setSubmitting(false);
-
-    }
+    form.reset();
+    setErrors({});
+    onClose();
+    router.push("/thank-you");
   }
 
   // =========================================
@@ -521,11 +401,10 @@ export default function PopupForm({
                   onBlur={
                     handleBlur
                   }
-                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
-                    errors.name
+                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${errors.name
                       ? "border-red-500"
                       : "border-gray-300"
-                  }`}
+                    }`}
                 />
 
                 <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
@@ -563,11 +442,10 @@ export default function PopupForm({
                   onBlur={
                     handleBlur
                   }
-                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
-                    errors.email
+                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${errors.email
                       ? "border-red-500"
                       : "border-gray-300"
-                  }`}
+                    }`}
                 />
 
                 <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
@@ -606,11 +484,10 @@ export default function PopupForm({
                   onBlur={
                     handleBlur
                   }
-                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
-                    errors.phone
+                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${errors.phone
                       ? "border-red-500"
                       : "border-gray-300"
-                  }`}
+                    }`}
                 />
 
                 <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
@@ -647,11 +524,10 @@ export default function PopupForm({
                   onBlur={
                     handleBlur
                   }
-                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${
-                    errors.company
+                  className={`peer w-full border px-3 py-2 rounded-md outline-none text-sm ${errors.company
                       ? "border-red-500"
                       : "border-gray-300"
-                  }`}
+                    }`}
                 />
 
                 <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
@@ -684,11 +560,10 @@ export default function PopupForm({
                   onBlur={
                     handleBlur
                   }
-                  className={`w-full border px-3 py-2 rounded-md text-sm ${
-                    errors.service
+                  className={`w-full border px-3 py-2 rounded-md text-sm ${errors.service
                       ? "border-red-500"
                       : "border-gray-300"
-                  }`}
+                    }`}
                 >
 
                   <option value="">
@@ -740,11 +615,10 @@ export default function PopupForm({
                   onBlur={
                     handleBlur
                   }
-                  className={`w-full border px-3 py-2 rounded-md text-sm ${
-                    errors.message
+                  className={`w-full border px-3 py-2 rounded-md text-sm ${errors.message
                       ? "border-red-500"
                       : "border-gray-300"
-                  }`}
+                    }`}
                 />
 
                 <label className="absolute left-3 -top-2 bg-white px-1 text-xs font-semibold text-gray-600">
@@ -771,11 +645,10 @@ export default function PopupForm({
                 disabled={
                   submitting
                 }
-                className={`w-full text-white py-2.5 rounded-md text-sm font-medium transition ${
-                  submitting
+                className={`w-full text-white py-2.5 rounded-md text-sm font-medium transition ${submitting
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-[#e94c89] hover:bg-[#781139]"
-                }`}
+                  }`}
               >
 
                 {submitting

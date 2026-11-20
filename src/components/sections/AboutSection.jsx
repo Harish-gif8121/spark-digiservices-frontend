@@ -17,7 +17,7 @@ export default function AboutSection() {
         
         {/* LEFT IMAGE */}
         <div className="relative w-full h-[350px] md:h-[450px]">
-          <Image
+          <image
             src={about.image}
             alt="About Company"
             fill
