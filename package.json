@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "framer-motion": "^12.35.2",
+    "lightningcss": "^1.33.0",
     "lucide-react": "^0.563.0",
     "next": "16.1.5",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-hot-toast": "^2.6.0",
+    "react-hot-toast": "^2.6.1",
     "react-icons": "^5.6.0"
   },
   "devDependencies": {

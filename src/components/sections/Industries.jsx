@@ -19,38 +19,52 @@ export default function IndustriesSection() {
     items: [
       {
         name: "Finance",
-        description:
-          "Secure solutions for smarter financial services.",
+        description: "Secure solutions for smarter financial services.",
         icon: "building",
+        gradient: "from-violet-500 to-fuchsia-500",
+        iconBg: "bg-violet-50",
+        iconColor: "text-violet-600",
       },
       {
         name: "Healthcare",
-        description:
-          " Enhancing care through digital innovation.",
+        description: "Enhancing care through digital innovation.",
         icon: "truck",
+        gradient: "from-emerald-500 to-teal-500",
+        iconBg: "bg-emerald-50",
+        iconColor: "text-emerald-600",
       },
       {
         name: "Retail",
-        description:
-          "Creating seamless and engaging shopping experiences.",
+        description: "Creating seamless and engaging shopping experiences.",
         icon: "store",
+        gradient: "from-blue-500 to-indigo-500",
+        iconBg: "bg-blue-50",
+        iconColor: "text-blue-600",
       },
       {
         name: "Automobile",
-        description:
-          "Driving innovation across the mobility ecosystem.",
+        description: "Driving innovation across the mobility ecosystem.",
         icon: "cart",
+        gradient: "from-orange-500 to-amber-500",
+        iconBg: "bg-orange-50",
+        iconColor: "text-orange-600",
       },
       {
         name: "Education",
-        description:" Empowering modern learning experiences.",
+        description: "Empowering modern learning experiences.",
         icon: "education",
+        gradient: "from-rose-500 to-pink-500",
+        iconBg: "bg-rose-50",
+        iconColor: "text-rose-600",
       },
       {
-        name:"Agriculture",
-        description:"Advancing farming with smart technology.",
-        icon:"design",
-      } 
+        name: "Agriculture",
+        description: "Advancing farming with smart technology.",
+        icon: "design",
+        gradient: "from-green-500 to-emerald-500",
+        iconBg: "bg-green-50",
+        iconColor: "text-green-600",
+      },
     ],
   };
 
@@ -67,29 +81,24 @@ export default function IndustriesSection() {
 
   const itemsList = industries.items;
   const total = itemsList.length;
-  const [active, setActive] = useState(2); // center card index
+  const [active, setActive] = useState(2);
 
-  // Responsive: detect if desktop (>= 1024px) to show 5 cards, else 3 cards
   const [isDesktop, setIsDesktop] = useState(true);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Auto rotate every 2 seconds (was 3s → faster)
   useEffect(() => {
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % total);
-    }, 1500); // ⬅️ speed increased
+    }, 2500);
     return () => clearInterval(interval);
   }, [total]);
 
-  // Position mapping (circular)
   const getPosition = (index) => {
     let diff = index - active;
     const half = total / 2;
@@ -97,7 +106,6 @@ export default function IndustriesSection() {
     if (diff < -half) diff += total;
 
     if (isDesktop) {
-      // 5-card layout: show diff -2 .. 2
       if (diff === 0) return "center";
       if (diff === -1) return "left";
       if (diff === 1) return "right";
@@ -105,7 +113,6 @@ export default function IndustriesSection() {
       if (diff === 2) return "farRight";
       return "hidden";
     } else {
-      // 3-card layout: only diff -1, 0, 1
       if (diff === 0) return "center";
       if (diff === -1) return "left";
       if (diff === 1) return "right";
@@ -115,30 +122,28 @@ export default function IndustriesSection() {
 
   const getStyles = (pos) => {
     if (isDesktop) {
-      // Desktop: increased horizontal gaps to avoid merging
       switch (pos) {
         case "center":
-          return "z-30 translate-x-0 border-[10px] border-[#0f6f78] w-[270px] h-[190px]";
+          return "z-30 translate-x-0 scale-100 opacity-100 w-[280px] h-[220px]";
         case "left":
-          return "z-20 -translate-x-[310px] border-[8px] border-[#b07a7a] w-[270px] h-[190px]"; // was -250
+          return "z-20 -translate-x-[320px] scale-95 opacity-90 w-[260px] h-[200px]";
         case "right":
-          return "z-20 translate-x-[310px] border-[8px] border-[#d96b6b] w-[270px] h-[190px]";  // was +250
+          return "z-20 translate-x-[320px] scale-95 opacity-90 w-[260px] h-[200px]";
         case "farLeft":
-          return "z-10 -translate-x-[620px] opacity-60 w-[270px] h-[190px]"; // was -500
+          return "z-10 -translate-x-[620px] scale-90 opacity-50 w-[240px] h-[180px]";
         case "farRight":
-          return "z-10 translate-x-[620px] opacity-60 w-[270px] h-[190px]";  // was +500
+          return "z-10 translate-x-[620px] scale-90 opacity-50 w-[240px] h-[180px]";
         default:
           return "hidden";
       }
     } else {
-      // Mobile/tablet: also increased gaps
       switch (pos) {
         case "center":
-          return "z-30 translate-x-0 border-[8px] border-[#0f6f78] w-[230px] h-[170px]";
+          return "z-30 translate-x-0 scale-100 opacity-100 w-[240px] h-[190px]";
         case "left":
-          return "z-20 -translate-x-[260px] border-[6px] border-[#b07a7a] w-[230px] h-[170px]"; // was -210
+          return "z-20 -translate-x-[200px] scale-95 opacity-85 w-[220px] h-[175px]";
         case "right":
-          return "z-20 translate-x-[260px] border-[6px] border-[#d96b6b] w-[230px] h-[170px]";  // was +210
+          return "z-20 translate-x-[200px] scale-95 opacity-85 w-[220px] h-[175px]";
         default:
           return "hidden";
       }
@@ -146,56 +151,118 @@ export default function IndustriesSection() {
   };
 
   return (
-    <section className="bg-white py-16 px-4 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* Headings - larger text as requested */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-3xl font-extrabold text-gray-800 tracking-tight">
+    <section className="relative bg-gradient-to-b from-white via-gray-50 to-white py-20 px-4 overflow-hidden">
+      {/* Soft colorful blobs */}
+      <div className="pointer-events-none absolute -top-24 -left-24 w-80 h-80 bg-violet-200/30 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-24 -right-24 w-80 h-80 bg-pink-200/30 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 w-72 h-72 bg-cyan-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+
+      <div className="relative max-w-7xl mx-auto">
+        {/* Headings */}
+        <div className="text-center mb-14 md:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white border border-violet-200 shadow-sm text-xs font-semibold text-violet-600 mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-violet-500" />
+            Industries We Serve
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
             {industries.title}
           </h2>
-          <p className="text-gray-400 text-sm md:text-base uppercase tracking-wider mt-4">
+
+          <p className="text-gray-500 text-sm md:text-base mt-4 max-w-xl mx-auto">
             {industries.subtitle}
           </p>
         </div>
 
         {/* Carousel container */}
-        <div className="relative flex justify-center items-center h-[440px] md:h-[360px] w-full overflow-hidden">
+        <div className="relative flex justify-center items-center h-[300px] md:h-[320px] w-full overflow-hidden">
           {itemsList.map((item, index) => {
             const pos = getPosition(index);
             if (pos === "hidden") return null;
+
+            const isCenter = pos === "center";
 
             return (
               <div
                 key={index}
                 className={`
-                  absolute transition-all duration-500 ease-in-out
-                  bg-white rounded-xl p-5 flex flex-col justify-center items-center shadow-md
-
-                  w-[260px] h-[240px] 
-                  md:w-[300px] md:h-[260px] 
-                  lg:w-[320px] lg:h-[280px]
-
+                  absolute transition-all duration-700 ease-in-out
+                  bg-white rounded-2xl flex flex-col justify-center items-center
+                  antialiased
                   ${getStyles(pos)}
+                  ${
+                    isCenter
+                      ? "shadow-2xl ring-2 ring-gray-900/5"
+                      : "shadow-md ring-1 ring-gray-100"
+                  }
                 `}
               >
+                {/* Top gradient bar */}
+                <div
+                  className={`absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r ${item.gradient}`}
+                />
+
+                {/* Soft corner glow — only on center */}
+                {isCenter && (
+                  <div
+                    className={`absolute -top-6 -right-6 w-20 h-20 rounded-full bg-gradient-to-br ${item.gradient} opacity-20 blur-2xl`}
+                  />
+                )}
+
+                {/* Icon chip */}
+                <div
+                  className={`relative z-10 flex items-center justify-center w-12 h-12 rounded-xl ${item.iconBg} ${item.iconColor} mb-3 transition-transform duration-300 ${
+                    isCenter ? "scale-110 shadow-sm" : ""
+                  }`}
+                >
+                  {iconMap[item.icon]}
+                </div>
+
+                {/* Title */}
                 <h3
-                  className={`font-bold text-lg md:text-2xl mb-2 text-center ${
-                    pos === "center" ? "text-[#0f6f78]" : "text-gray-700"
+                  className={`relative z-10 font-bold text-center leading-tight transition-colors duration-300 ${
+                    isCenter
+                      ? "text-gray-900 text-xl md:text-2xl"
+                      : "text-gray-700 text-base md:text-lg"
                   }`}
                 >
                   {item.name}
                 </h3>
 
-                <p className="text-gray-500 text-xs md:text-sm mb-3 text-center px-1">
+                {/* Description */}
+                <p
+                  className={`relative z-10 text-center px-3 leading-relaxed mt-1.5 transition-colors duration-300 ${
+                    isCenter ? "text-gray-500 text-xs md:text-sm" : "text-gray-400 text-[11px]"
+                  }`}
+                >
                   {item.description}
                 </p>
 
-                <div className="text-gray-500 text-xl md:text-2xl">
-                  {iconMap[item.icon]}
-                </div>
+                {/* Bottom accent line — center only */}
+                {isCenter && (
+                  <div
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] w-12 rounded-full bg-gradient-to-r ${item.gradient}`}
+                  />
+                )}
               </div>
             );
           })}
+        </div>
+
+        {/* Dots indicator */}
+        <div className="flex justify-center items-center gap-2 mt-8">
+          {itemsList.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === active
+                  ? "w-6 bg-gradient-to-r from-violet-500 to-pink-500"
+                  : "w-1.5 bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>
