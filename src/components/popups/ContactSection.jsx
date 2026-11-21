@@ -1,7 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Mail, User, Briefcase, MessageSquare, Building2 } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  User,
+  Briefcase,
+  MessageSquare,
+  Building2,
+} from "lucide-react";
+
+// 👇 Same services source used in PopupForm
+import servicesData from "@/data/services.json";
 
 export default function ContactSection() {
   const [form, setForm] = useState({
@@ -15,9 +25,8 @@ export default function ContactSection() {
 
   const [status, setStatus] = useState({ type: "", text: "" });
 
-  // 👉 Put the WhatsApp number here that should RECEIVE the enquiry
-  // Format: country code + number, no +, no spaces, no dashes
-  const WHATSAPP_NUMBER = "917995508708"; // change this if needed
+  // 👉 WhatsApp number that should RECEIVE the enquiry
+  const WHATSAPP_NUMBER = "917995508708";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,10 +52,13 @@ export default function ContactSection() {
       });
     }
     if (!form.message.trim()) {
-      return setStatus({ type: "error", text: "Please write a short message." });
+      return setStatus({
+        type: "error",
+        text: "Please write a short message.",
+      });
     }
 
-    // 🔨 Build the WhatsApp message text
+    // 🔨 Build WhatsApp message
     const text =
       `🚨 *New Website Lead*\n\n` +
       `👤 *Name:* ${form.name}\n` +
@@ -57,19 +69,17 @@ export default function ContactSection() {
       `💬 *Message:* ${form.message}\n\n` +
       `🌐 *Source:* website-contact`;
 
-    // 🔗 Build the wa.me link
-    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+      text
+    )}`;
 
-    // 🚀 Open WhatsApp (app on mobile, WhatsApp Web on desktop)
-    window.open(waUrl, "_blank");
+    // 🚀 Open WhatsApp
+    window.open(waUrl, "_blank", "noopener,noreferrer");
 
     setStatus({
       type: "success",
       text: "✅ WhatsApp opened — hit Send there to deliver your message.",
     });
-
-    // optional: reset form
-    // setForm({ name: "", phone: "", email: "", company: "", service: "", message: "" });
   };
 
   return (
@@ -80,7 +90,9 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
         {/* FORM */}
         <div className="backdrop-blur-xl bg-white/70 border border-gray-200 shadow-xl rounded-3xl p-8 lg:p-10">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Let's Work Together</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            Let's Work Together
+          </h2>
           <p className="text-gray-500 mb-8">
             Fill the form — clicking Send opens WhatsApp with your details.
           </p>
@@ -102,7 +114,10 @@ export default function ContactSection() {
 
             {/* PHONE */}
             <div className="relative">
-              <Phone className="absolute left-4 top-3.5 text-gray-400" size={18} />
+              <Phone
+                className="absolute left-4 top-3.5 text-gray-400"
+                size={18}
+              />
               <input
                 type="tel"
                 name="phone"
@@ -117,7 +132,10 @@ export default function ContactSection() {
 
             {/* EMAIL */}
             <div className="relative">
-              <Mail className="absolute left-4 top-3.5 text-gray-400" size={18} />
+              <Mail
+                className="absolute left-4 top-3.5 text-gray-400"
+                size={18}
+              />
               <input
                 type="email"
                 name="email"
@@ -131,7 +149,10 @@ export default function ContactSection() {
 
             {/* COMPANY */}
             <div className="relative">
-              <Building2 className="absolute left-4 top-3.5 text-gray-400" size={18} />
+              <Building2
+                className="absolute left-4 top-3.5 text-gray-400"
+                size={18}
+              />
               <input
                 type="text"
                 name="company"
@@ -142,26 +163,34 @@ export default function ContactSection() {
               />
             </div>
 
-            {/* SERVICE */}
+            {/* SERVICE — DYNAMIC FROM services.json */}
             <div className="relative">
-              <Briefcase className="absolute left-4 top-3.5 text-gray-400" size={18} />
+              <Briefcase
+                className="absolute left-4 top-3.5 text-gray-400 pointer-events-none"
+                size={18}
+              />
               <select
                 name="service"
                 value={form.service}
                 onChange={handleChange}
                 required
-                className="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition appearance-none"
+                className="w-full pl-11 pr-10 py-3 rounded-xl border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition appearance-none bg-white"
               >
                 <option value="">Select a Service</option>
-                <option>Web Development</option>
-                <option>App Development</option>
-                <option>SEO</option>
+                {servicesData.map((s) => (
+                  <option key={s.slug} value={s.title}>
+                    {s.title}
+                  </option>
+                ))}
               </select>
             </div>
 
             {/* MESSAGE */}
             <div className="relative">
-              <MessageSquare className="absolute left-4 top-3.5 text-gray-400" size={18} />
+              <MessageSquare
+                className="absolute left-4 top-3.5 text-gray-400"
+                size={18}
+              />
               <textarea
                 name="message"
                 placeholder="Tell us about your project..."
@@ -182,7 +211,9 @@ export default function ContactSection() {
 
             {status.text && (
               <p
-                className={`text-sm text-center mt-2 font-medium ${status.type === "success" ? "text-green-600" : "text-red-600"
+                className={`text-sm text-center mt-2 font-medium ${status.type === "success"
+                    ? "text-green-600"
+                    : "text-red-600"
                   }`}
               >
                 {status.text}
@@ -193,13 +224,16 @@ export default function ContactSection() {
 
         {/* RIGHT CONTENT */}
         <div>
-          <p className="text-pink-500 font-semibold mb-3 tracking-wide">CONTACT US</p>
+          <p className="text-pink-500 font-semibold mb-3 tracking-wide">
+            CONTACT US
+          </p>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
             We Build Solutions <br /> That Grow Your Business
           </h2>
           <p className="text-gray-600 mb-8">
-            Whether you're looking to build a website, mobile app, or boost your online
-            presence, our team is here to help you achieve your goals faster and smarter.
+            Whether you're looking to build a website, mobile app, or boost your
+            online presence, our team is here to help you achieve your goals
+            faster and smarter.
           </p>
 
           <div className="bg-gray-900 text-white p-6 rounded-2xl shadow-lg flex items-center gap-4">

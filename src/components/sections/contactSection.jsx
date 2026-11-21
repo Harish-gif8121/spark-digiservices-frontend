@@ -25,7 +25,7 @@ export default function ContactSection() {
           <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight text-gray-900">
             LET'S WORK
             <br />
-            <span className="bg-gradient-to-r from-violet-600 via-pink-500 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-pink-500 via-pink-500 to-pink-600 bg-clip-text text-transparentbg-gradient-to-r from-pink-500 via-pink-500 to-pink-600 bg-clip-text text-transparent">
               TOGETHER
             </span>
           </h2>
