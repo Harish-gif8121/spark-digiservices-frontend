@@ -234,7 +234,7 @@ export default function Header() {
             }`}
           >
             {/* top gradient line */}
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-violet-500 via-pink-500 to-orange-400" />
+            <div />
 
             {/* popup header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
