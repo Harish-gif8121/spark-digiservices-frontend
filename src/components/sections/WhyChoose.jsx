@@ -233,7 +233,7 @@ export default function TrustCombined({ data }) {
 
           <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-gray-900 tracking-tight">
             {section?.title}{" "}
-            <span className="bg-gradient-to-r from-pink-500 via-pink-500 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-500 via-blue-500 to-blue-600 bg-clip-text text-transparent">
               {section?.highlight}
             </span>
           </h2>

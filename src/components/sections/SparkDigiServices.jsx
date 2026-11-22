@@ -172,7 +172,7 @@ export default function ServicesSection() {
 
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
               Designed to Help Your{" "}
-              <span className="bg-gradient-to-r from-pink-500 via-pink-500 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-500 via-blue-500 to-blue-600 bg-clip-text text-transparent">
                 Business Grow
               </span>
             </h2>

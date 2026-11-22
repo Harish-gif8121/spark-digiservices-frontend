@@ -67,11 +67,10 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
             ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-gray-900/5"
             : "bg-white/85 backdrop-blur-md shadow-sm"
-        }`}
+          }`}
       >
         {/* Colorful top accent */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-violet-600 via-pink-500 to-orange-400" />
@@ -110,19 +109,17 @@ export default function Header() {
                   <Link
                     href={item.href}
                     onClick={() => handleNavClick(item.href)}
-                    className={`relative flex items-center gap-1 px-3.5 py-2 rounded-lg transition-all duration-200 ${
-                      active
+                    className={`relative flex items-center gap-1 px-3.5 py-2 rounded-lg transition-all duration-200 ${active
                         ? "text-[#e94c89] bg-pink-50"
                         : "text-gray-700 hover:text-[#e94c89] hover:bg-gray-50"
-                    }`}
+                      }`}
                   >
                     {item.label}
                     {hasChildren && (
                       <ChevronDown
                         size={14}
-                        className={`transition-transform duration-300 ${
-                          open ? "rotate-180" : ""
-                        }`}
+                        className={`transition-transform duration-300 ${open ? "rotate-180" : ""
+                          }`}
                       />
                     )}
                   </Link>
@@ -130,11 +127,10 @@ export default function Header() {
                   {/* DROPDOWN */}
                   {hasChildren && (
                     <div
-                      className={`absolute left-0 top-full pt-3 transition-all duration-300 origin-top ${
-                        open
+                      className={`absolute left-0 top-full pt-3 transition-all duration-300 origin-top ${open
                           ? "opacity-100 visible translate-y-0 scale-100"
                           : "opacity-0 invisible -translate-y-2 scale-95"
-                      }`}
+                        }`}
                     >
                       <div className="relative bg-white border border-gray-100 shadow-xl shadow-gray-900/10 rounded-xl w-64 overflow-hidden p-1.5">
                         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-violet-500 via-pink-500 to-orange-400" />
@@ -143,11 +139,10 @@ export default function Header() {
                             key={child.href}
                             href={child.href}
                             onClick={() => handleNavClick(child.href)}
-                            className={`flex items-center justify-between px-3.5 py-2.5 text-sm rounded-lg transition-all duration-200 ${
-                              pathname === child.href
+                            className={`flex items-center justify-between px-3.5 py-2.5 text-sm rounded-lg transition-all duration-200 ${pathname === child.href
                                 ? "bg-pink-50 text-[#e94c89] font-medium"
                                 : "text-gray-700 hover:bg-gray-50 hover:text-[#e94c89]"
-                            }`}
+                              }`}
                           >
                             <span>{child.label}</span>
                             <span className="w-1.5 h-1.5 rounded-full bg-[#e94c89] opacity-0 group-hover:opacity-100 transition" />
@@ -212,26 +207,23 @@ export default function Header() {
 
       {/* MOBILE MENU — POPUP */}
       <div
-        className={`md:hidden fixed inset-0 z-[60] transition-all duration-300 ${
-          menuOpen ? "visible" : "invisible"
-        }`}
+        className={`md:hidden fixed inset-0 z-[60] transition-all duration-300 ${menuOpen ? "visible" : "invisible"
+          }`}
       >
         {/* backdrop */}
         <div
-          className={`absolute inset-0 bg-gray-900/40 backdrop-blur-sm transition-opacity duration-300 ${
-            menuOpen ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 bg-gray-900/40 backdrop-blur-sm transition-opacity duration-300 ${menuOpen ? "opacity-100" : "opacity-0"
+            }`}
           onClick={() => setMenuOpen(false)}
         />
 
         {/* popup card */}
         <div className="absolute inset-0 flex items-center justify-center p-4">
           <div
-            className={`relative w-full max-w-sm bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${
-              menuOpen
+            className={`relative w-full max-w-sm bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${menuOpen
                 ? "opacity-100 scale-100 translate-y-0"
                 : "opacity-0 scale-95 translate-y-3"
-            }`}
+              }`}
           >
             {/* top gradient line */}
             <div />
@@ -267,11 +259,10 @@ export default function Header() {
                             handleNavClick(item.href);
                             setMenuOpen(false);
                           }}
-                          className={`py-2.5 px-4 font-semibold rounded-lg transition-colors ${
-                            active
+                          className={`py-2.5 px-4 font-semibold rounded-lg transition-colors ${active
                               ? "text-[#e94c89] bg-pink-50"
                               : "text-gray-800 hover:text-[#e94c89] hover:bg-gray-50"
-                          }`}
+                            }`}
                         >
                           {item.label}
                         </Link>
@@ -284,9 +275,8 @@ export default function Header() {
                           >
                             <ChevronDown
                               size={16}
-                              className={`transition-transform duration-300 ${
-                                activeDropdown === item.label ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 ${activeDropdown === item.label ? "rotate-180" : ""
+                                }`}
                             />
                           </button>
                         )}
@@ -294,11 +284,10 @@ export default function Header() {
 
                       {hasChildren && (
                         <div
-                          className={`overflow-hidden transition-[max-height,opacity] duration-300 ${
-                            activeDropdown === item.label
+                          className={`overflow-hidden transition-[max-height,opacity] duration-300 ${activeDropdown === item.label
                               ? "max-h-96 opacity-100"
                               : "max-h-0 opacity-0"
-                          }`}
+                            }`}
                         >
                           <div className="flex flex-col items-center py-1.5 space-y-0.5">
                             {item.children.map((child) => (
@@ -309,11 +298,10 @@ export default function Header() {
                                   handleNavClick(child.href);
                                   setMenuOpen(false);
                                 }}
-                                className={`block py-2 px-3 text-sm rounded-lg transition-colors ${
-                                  pathname === child.href
+                                className={`block py-2 px-3 text-sm rounded-lg transition-colors ${pathname === child.href
                                     ? "text-[#e94c89] bg-pink-50 font-medium"
                                     : "text-gray-600 hover:text-[#e94c89] hover:bg-gray-50"
-                                }`}
+                                  }`}
                               >
                                 {child.label}
                               </Link>
